@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Agreement from './views/Agreement.vue'
+import Service from './views/services/Service.vue'
+import Pricing from './views/pricing/Pricing.vue'
 
 Vue.use(Router)
 
@@ -12,6 +15,21 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/agreement',
+      name: 'agreement',
+      component: Agreement
+    },
+    {
+      path: '/services/:service',
+      name: 'services',
+      component: Service
+    },
+    {
+      path: '/pricing',
+      name: 'pricing',
+      component: Pricing
     },
     {
       path: '/about',

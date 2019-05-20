@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91" height="153" viewBox="0 0 91 153">
+  <defs>
+    <filter id="Shadow" x="0" y="0" width="91" height="153" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#ababab" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.027" y1="0.014" x2="1.318" y2="1.187" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dcecff"/>
+      <stop offset="1" stop-color="#dfd5ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Phone" transform="translate(-994.561 -265.419)">
+    <g transform="matrix(1, 0, 0, 1, 994.56, 265.42)" filter="url(#Shadow)">
+      <rect id="Shadow-2" data-name="Shadow" width="61" height="123" rx="16" transform="translate(15 15)" fill="#fff"/>
+    </g>
+    <rect id="Rectangle_21" data-name="Rectangle 21" width="63.561" height="123.419" rx="8" transform="translate(1010 280)" fill="#fff"/>
+    <rect id="Rectangle_22" data-name="Rectangle 22" width="58.289" height="118.147" rx="6" transform="translate(1012.636 282.636)" fill="url(#linear-gradient)"/>
+    <path id="Subtraction_4" data-name="Subtraction 4" d="M16.5,13H4.5A3.5,3.5,0,0,1,2.05,7h16.9A3.5,3.5,0,0,1,16.5,13Z" transform="translate(1031.561 273.419)" fill="#fff"/>
+  </g>
+</svg>

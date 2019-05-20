@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="174.481" height="222" viewBox="0 0 174.481 222">
+  <defs>
+    <filter id="Shadow" x="9.481" y="0" width="165" height="209" filterUnits="userSpaceOnUse">
+      <feOffset dx="19" dy="-15" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#b5b5b5" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.027" y1="0.014" x2="1" y2="1.133" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dcecff"/>
+      <stop offset="1" stop-color="#dfd5ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Tablet" transform="translate(-1010 -263.56)">
+    <g transform="matrix(1, 0, 0, 1, 1010, 263.56)" filter="url(#Shadow)">
+      <rect id="Shadow-2" data-name="Shadow" width="137" height="185" rx="16" transform="translate(9.48 24)" fill="#fff"/>
+    </g>
+    <rect id="Rectangle_21" data-name="Rectangle 21" width="160.481" height="205.56" rx="10" transform="translate(1010 280)" fill="#fff"/>
+    <rect id="Rectangle_22" data-name="Rectangle 22" width="150.563" height="189.331" rx="10" transform="translate(1015.409 284.508)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

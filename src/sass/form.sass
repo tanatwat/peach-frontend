@@ -1,0 +1,117 @@
+label
+   display: block
+   font-size: 1.5rem
+   margin-bottom: 12px
+
+input, textarea, select
+   color: #777
+   width: 100%
+   border: 2px solid #ddd
+   padding: .5rem 12px
+   outline: none
+   border-radius: 8px
+   font-size: 1.5rem !important
+   transition: all .3s ease
+
+input, textarea, select
+   &::placeholder
+      color: #ddd
+
+.radio-input
+   color: #fff !important
+   border-radius: 8px
+   padding: .75rem 0
+   margin: 0 !important
+   background: #7585da
+   cursor: pointer
+   transition: all .3s ease
+   &.checked
+      background: #5ac749
+
+input[type="checkbox"]
+   display: none
+input[type="checkbox"]:checked + label
+   border-color: #5ac749
+   background-color: #5ac749
+   &:hover
+      color: #fff !important
+      background-color: darken(#5ac749, 10%)
+      border-color: darken(#5ac749, 10%)
+label.checkbox
+   color: #ffffff !important
+   border-radius: 8px
+   background: #7585da
+   border: 2px solid #7585da
+   padding: 0.5rem 1.2rem
+   width: 100%
+   text-align: left
+   align-self: center
+   margin: 0
+   word-break: break-word
+   cursor: pointer
+   transition: all .3s ease
+   &:hover
+      background: #fff
+      color: #7585da !important
+   &.checked
+      border-color: #5ac749
+      background-color: #5ac749
+// .checkbox-wrapper
+//   position: relative
+
+// input
+//   &[type="checkbox"]
+//     display:  none
+//     position: absolute
+//     top: 0px
+//     left: 0px
+//     height: 20px
+//     width: 20px
+//     -webkit-appearance: none
+
+// .checkbox-label
+//   display: flex
+//   position: relative
+//   font-size: 20px
+//   font-weight: 400
+//   align-items: center
+//   justify-content: flex-start
+//   margin-bottom: 20px
+
+// .checkbox-label
+//   &:before, &:after
+//     pointer-events: none
+
+// .checkbox-label:before
+//   display: flex
+//   content: ' '
+//   height: 20px
+//   width: 20px
+//   border: solid 3px #000
+//   background: #fff
+//   margin-right: 10px
+
+// .checkbox-label:after
+//   position: absolute
+//   top: 7px
+//   left: 7px
+//   display: flex
+//   content: ' '
+//   height: 12px
+//   width: 12px
+//   background: #000
+//   transform: scale(0)
+//   transition: transform .3s ease
+//   height: 5px
+//   width: 12px
+//   left: 5px
+//   border-bottom: solid 4px #000
+//   border-left: solid 4px #000
+//   background: none
+//   transform: rotate(-45deg) scale(0)
+//   transition: transform .1s ease, opacity .1s ease
+//   transform-origin: center center
+
+// .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label:after
+//   opacity: 1
+//   transform: rotate(-45deg) scale(0.8)

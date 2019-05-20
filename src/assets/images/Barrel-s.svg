@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106.029" height="216.645" viewBox="0 0 106.029 216.645">
+  <defs>
+    <filter id="Barrel_Shadow" x="5.186" y="141.645" width="90" height="75" filterUnits="userSpaceOnUse">
+      <feOffset dy="37" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#bfbfbf" flood-opacity="0.349"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffd8d8"/>
+      <stop offset="1" stop-color="#f9b7b7"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect width="15.572" height="183.998" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="0.368" y1="0.268" x2="0.727" y2="0.919" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffcbcb"/>
+      <stop offset="1" stop-color="#ffb1b1"/>
+    </linearGradient>
+  </defs>
+  <g id="Barrel-s" transform="translate(-1413.814 -306.355)">
+    <g transform="matrix(1, 0, 0, 1, 1413.81, 306.35)" filter="url(#Barrel_Shadow)">
+      <ellipse id="Barrel_Shadow-2" data-name="Barrel Shadow" cx="36" cy="14.5" rx="36" ry="14.5" transform="translate(14.19 141.65)" fill="#fff"/>
+    </g>
+    <g id="Barrel" transform="translate(1304 -220.159)">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="47.5" cy="5.676" rx="47.5" ry="5.676" transform="translate(112.913 602.088)" fill="#ffd8d8"/>
+      <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="47.5" cy="5.676" rx="47.5" ry="5.676" transform="translate(112.913 602.088)" fill="url(#linear-gradient)"/>
+      <g id="Ruler" transform="translate(109.814 530.087) rotate(-7)">
+        <rect id="Rectangle_26" data-name="Rectangle 26" width="29.324" height="194.753" rx="5" fill="#fffbec"/>
+        <g id="Repeat_Grid_5" data-name="Repeat Grid 5" transform="translate(0 5.975)" clip-path="url(#clip-path)">
+          <g id="Group_2" data-name="Group 2" transform="translate(-376 -575)">
+            <line id="Line_1" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-2" data-name="Group 2" transform="translate(-376 -566)">
+            <line id="Line_1-2" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-2" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-3" data-name="Group 2" transform="translate(-376 -557)">
+            <line id="Line_1-3" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-3" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-4" data-name="Group 2" transform="translate(-376 -548)">
+            <line id="Line_1-4" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-4" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-5" data-name="Group 2" transform="translate(-376 -539)">
+            <line id="Line_1-5" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-5" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-6" data-name="Group 2" transform="translate(-376 -530)">
+            <line id="Line_1-6" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-6" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-7" data-name="Group 2" transform="translate(-376 -521)">
+            <line id="Line_1-7" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-7" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-8" data-name="Group 2" transform="translate(-376 -512)">
+            <line id="Line_1-8" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-8" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-9" data-name="Group 2" transform="translate(-376 -503)">
+            <line id="Line_1-9" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-9" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-10" data-name="Group 2" transform="translate(-376 -494)">
+            <line id="Line_1-10" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-10" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-11" data-name="Group 2" transform="translate(-376 -485)">
+            <line id="Line_1-11" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-11" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-12" data-name="Group 2" transform="translate(-376 -476)">
+            <line id="Line_1-12" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-12" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-13" data-name="Group 2" transform="translate(-376 -467)">
+            <line id="Line_1-13" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-13" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-14" data-name="Group 2" transform="translate(-376 -458)">
+            <line id="Line_1-14" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-14" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-15" data-name="Group 2" transform="translate(-376 -449)">
+            <line id="Line_1-15" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-15" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-16" data-name="Group 2" transform="translate(-376 -440)">
+            <line id="Line_1-16" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-16" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-17" data-name="Group 2" transform="translate(-376 -431)">
+            <line id="Line_1-17" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-17" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-18" data-name="Group 2" transform="translate(-376 -422)">
+            <line id="Line_1-18" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-18" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-19" data-name="Group 2" transform="translate(-376 -413)">
+            <line id="Line_1-19" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-19" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-20" data-name="Group 2" transform="translate(-376 -404)">
+            <line id="Line_1-20" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-20" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+          <g id="Group_2-21" data-name="Group 2" transform="translate(-376 -395)">
+            <line id="Line_1-21" data-name="Line 1" x2="10" transform="translate(376.5 575.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_2-21" data-name="Line 2" x2="6" transform="translate(376.5 580.5)" fill="none" stroke="#ff9b9b" stroke-linecap="round" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_3" data-name="Group 3" transform="translate(196.285 558.387) rotate(13)">
+        <rect id="Rectangle_28" data-name="Rectangle 28" width="8.962" height="143.633" transform="translate(4.736 21.703)" fill="#feb1d8"/>
+        <g id="Group_4" data-name="Group 4" transform="matrix(0.946, 0.326, -0.326, 0.946, 7.554, 0)">
+          <path id="Union_5" data-name="Union 5" d="M.446,17.92l-.084,0s-1.068-6.532.262-9.47S2.769,2.8.912.4,11.321,6.975,13.392,12.12c.034.085.064.169.089.252a7.034,7.034,0,0,1,.9,3.476,7.166,7.166,0,0,1-7.134,7.129A7.052,7.052,0,0,1,.446,17.92Z" transform="translate(-0.011 -0.023)" fill="#ffafaf"/>
+          <path id="Union_6" data-name="Union 6" d="M.512,15.256l-.066.008S-.839,11.352.764,8.587,3.109,2.01,1.612.219s8.5,7.655,9.341,10.713q.016.057.026.113a4.946,4.946,0,0,1,.77,2.667A5.574,5.574,0,0,1,6,19.03,5.646,5.646,0,0,1,.512,15.256Z" transform="translate(1.706 3.928)" fill="#ffc1c1"/>
+        </g>
+      </g>
+      <g id="Pencil" transform="matrix(0.995, 0.105, -0.105, 0.995, 177.889, 544.847)">
+        <path id="Path_24" data-name="Path 24" d="M.32.016,9.282,0l-.32,158.555L0,158.571Z" transform="translate(2.767 11.758) rotate(1)" fill="#b7a5f1"/>
+        <path id="Path_22" data-name="Path 22" d="M0,11.78H8.185L4.187,0Z" transform="translate(3.478 0)" fill="#ffc5c5" stroke="#ffc5c5" stroke-width="1"/>
+        <path id="Path_23" data-name="Path 23" d="M0,4.935H3.4L1.738,0Z" transform="translate(5.901 0)" fill="#787878" stroke="#787878" stroke-width="1"/>
+      </g>
+      <path id="Union_4" data-name="Union 4" d="M26.321,118.842c-5.883-.781-9.8-1.858-11.041-3.034l-.073-.522h-.064L0,.012C1.48,3,22.308,5.347,47.416,5.347,72.577,5.347,93.408,3,94.839,0l-14.3,114.75a.827.827,0,0,1,.035.237c0,1.357-3.418,2.632-9.625,3.591a160.266,160.266,0,0,1-23.237,1.487A170.265,170.265,0,0,1,26.321,118.842Z" transform="translate(112.997 608.093)" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>
