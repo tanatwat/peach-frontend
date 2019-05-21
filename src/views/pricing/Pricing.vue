@@ -22,11 +22,20 @@
 
         <div class="pricing-container" v-show="step == 2">
           <label class="has-text-centered">คุณชื่ออะไร?</label>
-          <input class="input" type="text" placeholder="ชื่อของคุณ" v-model="name">
-          <label class="has-text-centered" style="margin-top:1rem">อีเมลของคุณ</label>
-          <input class="input" type="email" placeholder="email@example.com" v-model="email">
+          <input class="input" type="text" placeholder="ชื่อของคุณ" v-model="form.name">
+          <label class="has-text-centered" style="margin-top:1rem">ชื่อบริษัท (ถ้ามี)</label>
+          <input class="input" type="text" placeholder="ชื่อบริษัท" v-model="form.company">
+          <label class="has-text-centered" style="margin-top:1rem">อีเมล</label>
+          <input class="input" type="email" placeholder="email@example.com" v-model="form.email">
           <label class="has-text-centered" style="margin-top:1rem">ช่องทางติดต่ออื่น</label>
-          <input class="input" type="email" placeholder="โทรศัพท์ ไลน์ หรืออื่นๆ" v-model="address">
+          <input
+            class="input"
+            type="text"
+            placeholder="โทรศัพท์ ไลน์ หรืออื่นๆ"
+            v-model="form.contact"
+          >
+          <label class="has-text-centered" style="margin-top:1rem">ที่อยู่</label>
+          <textarea cols="30" rows="5" v-model="form.address" placeholder="ที่อยู่ที่สามารถติดต่อได้"></textarea>
           <step-button :back="false"></step-button>
         </div>
 
@@ -36,10 +45,10 @@
               <p>สวัสดีครับคุณ {{ name }}</p>
               <label>ต้องการเว็บไซต์สำหรับใคร?</label>
               <div id="example-3">
-                <input class="is-hidden" type="radio" id="one" :value="1" v-model="websiteFor">
+                <input class="is-hidden" type="radio" id="one" :value="1" v-model="form.websiteFor">
                 <label class="radio-input" :class="{'checked' : websiteFor == 1}" for="one"><i class="fas fa-check" v-show="websiteFor == 1"></i>&nbsp;ตัวคุณเอง</label>
                 <br>
-                <input class="is-hidden" type="radio" id="two" :value="2" v-model="websiteFor">
+                <input class="is-hidden" type="radio" id="two" :value="2" v-model="form.websiteFor">
                 <label class="radio-input" :class="{'checked' : websiteFor == 2}" for="two"><i class="fas fa-check" v-show="websiteFor == 2"></i>&nbsp;บริษัท หรือ ธุรกิจของคุณ</label>
                 <br>
               </div>
@@ -50,40 +59,40 @@
 
         <div class="pricing-container has-text-centered" v-show="step == 3">
           <div class="content is-large has-text-info">
-            <p>สวัสดีครับคุณ {{ name }}</p>
+            <p>สวัสดีครับคุณ {{ form.name }}</p>
             <label>คุณต้องการเว็บไซต์สำหรับอะไร?</label>
             <input
               class="input"
               type="text"
               placeholder="เช่น ธุรกิจของคุณ ขายสินค้า พอร์ตโฟลิโอ"
-              v-model="goal"
+              v-model="form.goal"
             >
             <span class="example">อาจระบุว่าคุณทำธุรกิจอะไร หรือ เป้าหมายของคุณก็ได้</span>
           </div>
-          <step-button :back="false"></step-button>
+          <step-button></step-button>
         </div>
 
         <div class="pricing-container has-text-centered" v-show="step == 4">
           <div class="content is-large has-text-info">
             <label>คุณมีโลโก้แบรนด์ของคุณหรือไม่?</label>
-            <div class="level" style="justify-content: space-around">
-              <input class="is-hidden" type="radio" id="one" :value="true" v-model="hasLogo">
+            <div class="level is-mobile" style="justify-content: space-around">
+              <input class="is-hidden" type="radio" id="one" :value="true" v-model="form.hasLogo">
               <label
                 class="radio-input"
-                :class="{'checked' : hasLogo}"
+                :class="{'checked' : form.hasLogo}"
                 for="one"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="hasLogo"></i>&nbsp;มี
+                <i class="fas fa-check" v-show="form.hasLogo"></i>&nbsp;มี
               </label>
-              <input class="is-hidden" type="radio" id="two" :value="false" v-model="hasLogo">
+              <input class="is-hidden" type="radio" id="two" :value="false" v-model="form.hasLogo">
               <label
                 class="radio-input"
-                :class="{'checked' : !hasLogo}"
+                :class="{'checked' : !form.hasLogo}"
                 for="two"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="!hasLogo"></i>&nbsp;ไม่มี
+                <i class="fas fa-check" v-show="!form.hasLogo"></i>&nbsp;ไม่มี
               </label>
             </div>
             <label>ถ้าคุณมีเว็บไซต์เดิมอยู่แล้วโปรดระบุ</label>
@@ -92,7 +101,7 @@
               class="input"
               type="text"
               placeholder="ลิ้งค์ไปยังเว็บไซต์ของคุณ"
-              v-model="oldWebsite"
+              v-model="form.oldWebsite"
             >
           </div>
           <step-button></step-button>
@@ -102,7 +111,7 @@
           <div class="content is-large has-text-info">
             <label>คุณต้องการให้เว็บไซต์ทำอะไรได้บ้าง?</label>
             <div v-for="(choice, index) in webFunctions">
-              <input type="checkbox" :id="index" :value="choice" v-model="functionalities">
+              <input type="checkbox" :id="index" :value="choice" v-model="form.functionalities">
               <label class="checkbox" :for="index">{{ choice }}</label>
             </div>
           </div>
@@ -112,12 +121,12 @@
         <div class="pricing-container has-text-centered" v-show="step == 6">
           <div class="content is-large has-text-info">
             <label>คุณต้องการเว็บไซต์กี่หน้า?</label>
-            <input class="input" type="text" placeholder="จำนวนหน้า" v-model="totalPage">
+            <input class="input" type="text" placeholder="จำนวนหน้า" v-model="form.totalPage">
             <label style="margin-top: 1rem">ต้องการหน้าเกี่ยวกับอะไรบ้าง?</label>
             <textarea
               cols="15"
               rows="10"
-              v-model="pageName"
+              v-model="form.pageName"
               placeholder="เช่น เกี่ยวกับเรา สินค้าและบริการ ติดต่อเรา"
               style="height: 200px"
             ></textarea>
@@ -132,7 +141,7 @@
             <textarea
               cols="30"
               rows="10"
-              v-model="description"
+              v-model="form.description"
               placeholder="เช่น รูปแบบดีไซน์ ฟังก์ชั่นการใช้งาน ตัวอย่างเว็บไซต์"
             ></textarea>
           </div>
@@ -142,37 +151,37 @@
         <div class="pricing-container has-text-centered" v-show="step == 8">
           <div class="content is-large has-text-info">
             <label>คุณมีงบประมาณเท่าไหร่?</label>
-            <input class="input" type="number" placeholder="จำนวนเงิน" v-model="budget">
+            <input class="input" type="text" placeholder="จำนวนเงิน" v-model="form.budget">
             <label style="margin-top: 1rem">ต้องการให้งานเสร็จภายในเวลาเท่าไหร่?</label>
-            <select v-model="deadline">
+            <select v-model="form.deadline">
               <option :value="date" v-for="date in deadlines">{{ date }}</option>
             </select>
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 9">
+        <!-- <div class="pricing-container has-text-centered" v-show="step == 9">
           <div class="content is-large has-text-info">
             <label>
               ถ้ามีไฟล์ที่ต้องการแนบ
               <br>คุณสามารถอัพโหลดได้ด้านล่าง
             </label>
-            <input class type="file">
+            <input type="file" name="" id="" multiple>
           </div>
           <step-button></step-button>
-        </div>
+        </div>-->
 
-        <div class="pricing-container has-text-centered" v-show="step == 10">
+        <div class="pricing-container has-text-centered" v-show="step == 9">
           <div class="content is-large has-text-info">
             <label>คำถามเพิ่มเติม</label>
             <textarea
               cols="30"
               rows="10"
-              v-model="questions"
+              v-model="form.questions"
               placeholder="หากมีคำถามคุณสามารถเขียนได้ที่นี่"
             ></textarea>
           </div>
-          <step-button next-text="ส่งแบบฟอร์ม"></step-button>
+          <step-button :next="false" :submit-button="true" v-on:click-submit="submit()"></step-button>
         </div>
       </div>
     </section>
@@ -181,25 +190,31 @@
 <script>
 import StepButton from "./_stepButton.vue";
 export default {
-  components: { StepButton },
+  components: {
+    StepButton
+  },
   data() {
     return {
       step: 1,
-      totalSteps: 10,
-      name: null,
-      email: null,
-      address: null,
-      websiteFor: null,
-      hasLogo: false,
-      goal: null,
-      oldWebsite: null,
-      functionalities: [],
-      description: null,
-      totalPage: null,
-      pageName: null,
-      budget: null,
-      deadline: null,
-      questions: null,
+      totalSteps: 9,
+      form: {
+        name: null,
+        company: null,
+        email: null,
+        contact: null,
+        address: null,
+        websiteFor: null,
+        hasLogo: false,
+        goal: null,
+        oldWebsite: null,
+        functionalities: [],
+        description: null,
+        totalPage: null,
+        pageName: null,
+        budget: null,
+        deadline: null,
+        questions: null
+      },
       webFunctions: [
         "ระบบร้านค้า (Ecommerce)",
         "ระบบจัดการข้อมูล (CMS)",
@@ -214,7 +229,15 @@ export default {
         "ภายใน 3 เดือน",
         "ภายใน 6 เดือน"
       ],
-      overlay: false
+      overlay: false,
+      dropzoneOptions: {
+        url: "https://httpbin.org/post",
+        thumbnailWidth: 150,
+        maxFilesize: 0.5,
+        autoProcessQueue: false,
+        addRemoveLinks: true,
+        headers: { "My-Awesome-Header": "header value" }
+      }
     };
   },
   watch: {
@@ -235,6 +258,9 @@ export default {
       } else {
         return false;
       }
+    },
+    submit() {
+      console.log('SEND')
     }
   },
   created() {
@@ -245,6 +271,7 @@ export default {
 </script>
 
 <style lang="sass">
+$btn-color: #6679d5
 .step-overlay
   position: absolute
   width: 100%
@@ -252,7 +279,7 @@ export default {
   background: #191e3c
 .step-counter
   padding: .75rem
-  background: #7585da
+  background: $btn-color
   color: #fff
   text-align: center
   width: fit-content
@@ -269,7 +296,7 @@ export default {
    margin-top: 1.75rem
    padding: 0.5rem 30px
    border-radius: 8px
-   background: #7585da
+   background:$btn-color
    color: #fff
    transition: all .3s ease
    &:hover
@@ -284,12 +311,12 @@ export default {
   background: #ffe9e9
   label, p , h1, h2 ,h3, h4 ,h5
     margin-bottom: 18px
-    color: #5c71dd
+    color: $btn-color
   input, textarea, select
     border-color: #fff
     color: #555
     &:focus
-      border-color: #5c71dd
+      border-color: $btn-color
   textarea
     font-size: 1.2rem !important
   .content
@@ -309,7 +336,7 @@ export default {
    background: #fff
    text-align: left
    &.active
-      border-color: #5c71dd
+      border-color: $btn-color
 
 span.example
   display: block

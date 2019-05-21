@@ -51,54 +51,60 @@
     <div id="services" class="section">
       <div class="container w-container">
         <h2 class="section-title centered">บริการ</h2>
-        <div class="w-layout-grid service-grid">
-          <div class="service-wrapper">
-            <div class="service-header basic">
-              <h4>Basic</h4>
-            </div>
-            <div class="service-details">
-              <div class="service-explain">
-                เว็บไซต์บริษัท ธุรกิจ
-                <br>แสดงผลงาน หรือผลิตภัณฑ์
+        <div class="columns">
+          <div class="column">
+            <div class="service-wrapper">
+              <div class="service-header basic">
+                <h4>Basic</h4>
               </div>
-              <h3 class="start-at">เริ่มต้นที่</h3>
-              <h2 class="service-price">15,000 บาท</h2>
-            </div>
-            <div class="service-button-wrapper">
-              <router-link to="/services/basic" class="service-button basic w-button">รายละเอียด</router-link>
-            </div>
-          </div>
-          <div class="service-wrapper">
-            <div class="service-header ecom">
-              <h4>Ecommerce</h4>
-            </div>
-            <div class="service-details">
-              <div class="service-explain">
-                เปิดร้านค้าออนไลน์
-                <br>พร้อมระบบหลังร้าน
-                <br>
+              <div class="service-details">
+                <div class="service-explain">
+                  เว็บไซต์บริษัท ธุรกิจ
+                  <br>แสดงผลงาน หรือผลิตภัณฑ์
+                </div>
+                <h3 class="start-at">เริ่มต้นที่</h3>
+                <h2 class="service-price">15,000 บาท</h2>
               </div>
-              <h3 class="start-at">เริ่มต้นที่</h3>
-              <h2 class="service-price">49,000 บาท</h2>
-            </div>
-            <div class="service-button-wrapper">
-              <router-link to="/services/ecom" class="service-button ecom w-button">รายละเอียด</router-link>
-            </div>
-          </div>
-          <div class="service-wrapper">
-            <div class="service-header custom">
-              <h4>Custom</h4>
-            </div>
-            <div class="service-details">
-              <div class="service-explain">
-                หากมีความต้องการอื่นๆ
-                <br>สามารถสอบถามได้เลย
+              <div class="service-button-wrapper">
+                <router-link to="/services/basic" class="service-button basic w-button">รายละเอียด</router-link>
               </div>
             </div>
-            <div class="service-button-wrapper">
-              <a href="#contact" class="service-button custom w-button">ดูช่องทางติดต่อ</a>
+          </div>
+          <div class="column">
+            <div class="service-wrapper">
+              <div class="service-header ecom">
+                <h4>Ecommerce</h4>
+              </div>
+              <div class="service-details">
+                <div class="service-explain">
+                  เปิดร้านค้าออนไลน์
+                  <br>พร้อมระบบหลังร้าน
+                  <br>
+                </div>
+                <h3 class="start-at">เริ่มต้นที่</h3>
+                <h2 class="service-price">25,000 บาท</h2>
+              </div>
+              <div class="service-button-wrapper">
+                <router-link to="/services/ecom" class="service-button ecom w-button">รายละเอียด</router-link>
+              </div>
             </div>
           </div>
+          <!-- <div class="column">
+            <div class="service-wrapper">
+              <div class="service-header custom">
+                <h4>Custom</h4>
+              </div>
+              <div class="service-details">
+                <div class="service-explain">
+                  หากมีความต้องการอื่นๆ
+                  <br>สามารถสอบถามได้เลย
+                </div>
+              </div>
+              <div class="service-button-wrapper">
+                <a href="#contact" class="service-button custom w-button">ดูช่องทางติดต่อ</a>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -185,14 +191,17 @@
               ประเมิณราคาจาก
               <br>ความต้องการของลูกค้า
             </h4>
-            <a href="#" class="service-button workflow-button w-button">กรอกแบบฟอร์มที่นี่</a>
-            <div class="workflow-detail proposal">หรือ</div>
-            <a href="#contact" class="service-button workflow-button w-button">ช่องทางติดต่ออื่น</a>
+            <router-link
+              to="/pricing"
+              class="service-button workflow-button w-button"
+            >กรอกแบบฟอร์มที่นี่</router-link>
+            <!-- <div class="workflow-detail proposal">หรือ</div>
+            <a href="#contact" class="service-button workflow-button w-button">ช่องทางติดต่ออื่น</a>-->
           </div>
           <div class="workflow-step">
             <h4 class="workflow-step-title">ลูกค้าชำระเงินมัดจำ</h4>
             <div class="workflow-detail">งานจะเริ่มหลังจากชำระเงินเท่านั้น</div>
-            <a href="#" class="service-button workflow-button w-button">ดูช่องทางชำระเงิน</a>
+            <!-- <a href="#" class="service-button workflow-button w-button">ดูช่องทางชำระเงิน</a> -->
           </div>
           <div class="workflow-step">
             <h4 class="workflow-step-title">เริ่มทำงาน</h4>
@@ -205,20 +214,20 @@
               <span class="pink-font">แบบร่าง</span>
               <span class="pink-font">(Wireframe)</span>
               <br>หรือ
-              <span class="pink-font">ไฟล์ดีไซน์</span> หรือ
+              <span class="pink-font">ไฟล์ดีไซน์&nbsp;(xd)</span> หรือ
               <span class="pink-font">ตัวอย่างเว็บไซต์จริง</span>
               <br>ขึ้นอยู่กับความซับซ้อนของโปรเจค
             </div>
-            <div class="workflow-detail">
+            <!-- <div class="workflow-detail">
               <span class="error-font">*ลูกค้าสามารถแก้ไขได้ไม่เกิน 2 ครั้ง</span>
-            </div>
+            </div>-->
           </div>
           <div class="workflow-step">
             <h4 class="workflow-step-title">ทำเว็บไซต์</h4>
             <div class="workflow-detail">
               ทำตามแบบดีไซน์ที่ลูกค้าตกลงก่อนหน้า
-              <br>
-              <span class="error-font">*ไม่สามารถแก้ไขได้อีกในขั้นตอนนี้</span>
+              <!-- <br>
+              <span class="error-font">*ไม่สามารถแก้ไขได้อีกในขั้นตอนนี้</span>-->
             </div>
           </div>
           <div class="workflow-step">
@@ -274,7 +283,7 @@ export default {
     return {};
   },
   created() {
-    this.$root.page = 'home'
+    this.$root.page = "home";
   }
 };
 </script>

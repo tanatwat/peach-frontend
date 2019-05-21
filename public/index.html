@@ -13,8 +13,26 @@
   <link href="https://fonts.googleapis.com/css?family=Mitr&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-  <div id="app">
+  <div id="app"></div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
-  </div>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDbUk1EQWc_ng-sk1WT4L0UqjAWN2c6Mk0",
+      authDomain: "peach-web.firebaseapp.com",
+      databaseURL: "https://peach-web.firebaseio.com",
+      projectId: "peach-web",
+      storageBucket: "peach-web.appspot.com",
+      messagingSenderId: "354335409771",
+      appId: "1:354335409771:web:2dce97c011d83a6a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>

@@ -6,18 +6,10 @@
       <br>ลูกค้าของคุณสามารถช็อป และชำระเงินออนไลน์ได้อย่างง่ายดาย
       <br>
     </p>
-    <p class="service-paragraph">
-      *ระบบหลังร้านและจัดการข้อมูล เป็นบริการจาก
-      <a
-        href="https://webflow.com"
-        class="span-link"
-        target="_blank"
-      >Webflow</a>
-    </p>
     <h2 class="section-title">ค่าทำเว็บไซต์</h2>
     <h3 class="section-title">
       เริ่มต้นที่
-      <span class="success-font">20,000</span> บาท
+      <span class="success-font">25,000</span> บาท
       <br>
       <span class="is-size-5 has-text-grey">*ไม่รวมค่าโฮสต์และโดเมน</span>
     </h3>
@@ -41,7 +33,13 @@
       <p class="service-paragraph">
         <span class="basic-font">
           *ลงสินค้าให้ฟรี 10 ชิ้น
-          <br>*ไม่สามารถแก้ไขได้ด้วยตัวเอง
+          <br>*คุณสามารถแก้ไขข้อมูลบางส่วนบนหน้าเว็บได้
+          <br>*ระบบหลังร้านและจัดการข้อมูล เป็นบริการจาก
+          <a
+            href="https://webflow.com"
+            class="span-link"
+            target="_blank"
+          >Webflow</a>
         </span>
       </p>
     </div>

@@ -83,6 +83,7 @@ export default {
 @import "./sass/form"
 @import "./sass/core"
 @import "./sass/loading"
+@import "./sass/dropzone"
 
 @import "./css/normalize"
 @import "./css/webflow"

@@ -11,6 +11,10 @@
         {{ nextText }}&nbsp;
         <i class="fas fa-caret-right"></i>
       </button>
+      <button class="pricing-button" @click="$emit('click-submit')" v-show="submitButton">
+        ส่งแบบฟอร์ม&nbsp;
+        <i class="fas fa-check"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -32,6 +36,9 @@ export default {
     },
     wrapper: {
       default: 'level is-mobile'
+    },
+    submitButton: {
+      default: false
     }
   },
   methods: {
