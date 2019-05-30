@@ -900,6 +900,7 @@ figcaption
   border-radius: 8px
   background-color: #fff
   box-shadow: 0 2px 5px 0 #b5b5b5
+  margin-bottom: 2rem
 
 .showcase-title
   margin-top: 0px
@@ -993,11 +994,14 @@ figcaption
   padding-right: 1.5rem
   padding-left: 1.5rem
   border-radius: 50px
-  background-color: #f0a4a4
+  background-color: #6679d5
   color: #fff
+  transition: all .3s ease
   &:hover
-    opacity: 0.9
+    background-color: darken(#6679d5, 5%)
     color: #fff
+  &.ecom:hover
+    background-color: darken(#29dacf, 5%)
   &.workflow-button
     margin-top: 0.75rem
 
@@ -1059,10 +1063,9 @@ figcaption
 
 .page-link
   display: inline-block
-  color: #f0a4a4
+  color: #6679d5
   &:hover
-    opacity: 0.8
-    color: #ff9292
+    color: darken(#6679d5, 5%)
 
 .ecom
   background-color: #29dacf

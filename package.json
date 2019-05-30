@@ -11,13 +11,13 @@
     "axios": "^0.18.0",
     "bulma": "^0.7.4",
     "core-js": "^2.6.5",
-    "jquery": "^3.4.1",
-    "v-uploader": "^1.8.0",
+    "firebase": "^6.0.2",
+    "jspdf": "^1.5.3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue-smooth-reflow": "^0.1.12",
     "vue2-animate": "^2.1.0",
-    "vue2-dropzone": "^3.5.9"
+    "vuefire": "^2.0.0-alpha.24"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",

@@ -69,8 +69,9 @@
       </p>
     </div>
 
-    <div class="package-wrapper">
-      <h3 class="section-title has-text-centered">แพ็คเกจโฮสต์ CMS</h3>
+    <div class="package-wrapper has-text-centered">
+      <h3 class="section-title">แพ็คเกจโฮสต์ CMS</h3>
+      <p>*ราคานี้เป็นบริการของ Webflow ถ้าเป็นโฮสต์อื่นอาจเป็นอีกราคา</p>
     </div>
     <div class="columns is-multiline is-mobile has-text-centered pricing-table pricing-header">
       <div class="column is-4-desktop is-hidden-mobile"></div>

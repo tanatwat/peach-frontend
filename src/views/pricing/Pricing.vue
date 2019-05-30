@@ -1,12 +1,26 @@
 <template>
   <div class="page-content is-flex">
     <section id="container" class="section">
-      <transition name="fade">
+      <div class="load-overlay" v-show="$root.loading">
+        <div class="roller-wrapper">
+          <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <transition name="fade" enter-active-class="fade" leave-active-class="fadeOut">
         <div class="step-overlay" v-show="overlay"></div>
       </transition>
 
       <div class="container w-container">
-        <p class="step-counter">หน้าที่&nbsp;{{ step + ' จาก ' + totalSteps}}</p>
+        <p class="step-counter" v-show="step >= 1">หน้าที่&nbsp;{{ step + ' จาก ' + totalSteps}}</p>
 
         <div class="pricing-container has-text-centered" v-show="step == 1">
           <div class="content has-text-info">
@@ -21,21 +35,29 @@
         </div>
 
         <div class="pricing-container" v-show="step == 2">
-          <label class="has-text-centered">คุณชื่ออะไร?</label>
-          <input class="input" type="text" placeholder="ชื่อของคุณ" v-model="form.name">
-          <label class="has-text-centered" style="margin-top:1rem">ชื่อบริษัท (ถ้ามี)</label>
-          <input class="input" type="text" placeholder="ชื่อบริษัท" v-model="form.company">
-          <label class="has-text-centered" style="margin-top:1rem">อีเมล</label>
-          <input class="input" type="email" placeholder="email@example.com" v-model="form.email">
-          <label class="has-text-centered" style="margin-top:1rem">ช่องทางติดต่ออื่น</label>
-          <input
-            class="input"
-            type="text"
-            placeholder="โทรศัพท์ ไลน์ หรืออื่นๆ"
-            v-model="form.contact"
-          >
-          <label class="has-text-centered" style="margin-top:1rem">ที่อยู่</label>
-          <textarea cols="30" rows="5" v-model="form.address" placeholder="ที่อยู่ที่สามารถติดต่อได้"></textarea>
+          <div class="form-group">
+            <label class="has-text-centered">คุณชื่ออะไร?</label>
+            <input class="input" type="text" placeholder="ชื่อของคุณ" v-model="form.name">
+            <label class="has-text-centered">ชื่อบริษัท (ถ้ามี)</label>
+            <input class="input" type="text" placeholder="ชื่อบริษัท" v-model="form.company">
+            <label class="has-text-centered">อีเมล</label>
+            <input class="input" type="email" placeholder="email@example.com" v-model="form.email">
+            <label class="has-text-centered">ช่องทางติดต่ออื่น</label>
+            <input
+              class="input"
+              type="text"
+              placeholder="โทรศัพท์ ไลน์ หรืออื่นๆ"
+              v-model="form.contact"
+            >
+            <label class="has-text-centered">ที่อยู่</label>
+            <textarea
+              cols="30"
+              rows="5"
+              v-model="form.address"
+              placeholder="ที่อยู่ที่สามารถติดต่อได้"
+            ></textarea>
+          </div>
+
           <step-button :back="false"></step-button>
         </div>
 
@@ -59,7 +81,6 @@
 
         <div class="pricing-container has-text-centered" v-show="step == 3">
           <div class="content is-large has-text-info">
-            <p>สวัสดีครับคุณ {{ form.name }}</p>
             <label>คุณต้องการเว็บไซต์สำหรับอะไร?</label>
             <input
               class="input"
@@ -95,8 +116,44 @@
                 <i class="fas fa-check" v-show="!form.hasLogo"></i>&nbsp;ไม่มี
               </label>
             </div>
+            <label>คุณมีแบบดีไซน์อยู่แล้วหรือไม่?</label>
+            <span
+              class="example"
+              style="margin-bottom: .75rem"
+            >*ถ้าไม่มีคุณต้องเสียค่าออกแบบเพิ่มหรือคุณสามารถจ้างดีไซน์เนอร์อื่นทำให้ก็ได้</span>
+            <div class="level is-mobile" style="justify-content: space-around">
+              <input
+                class="is-hidden"
+                type="radio"
+                id="three"
+                :value="true"
+                v-model="form.hasDesign"
+              >
+              <label
+                class="radio-input"
+                :class="{'checked' : form.hasDesign}"
+                for="three"
+                style="width: 40%"
+              >
+                <i class="fas fa-check" v-show="form.hasDesign"></i>&nbsp;มี
+              </label>
+              <input
+                class="is-hidden"
+                type="radio"
+                id="four"
+                :value="false"
+                v-model="form.hasDesign"
+              >
+              <label
+                class="radio-input"
+                :class="{'checked' : !form.hasDesign}"
+                for="four"
+                style="width: 40%"
+              >
+                <i class="fas fa-check" v-show="!form.hasDesign"></i>&nbsp;ไม่มี
+              </label>
+            </div>
             <label>ถ้าคุณมีเว็บไซต์เดิมอยู่แล้วโปรดระบุ</label>
-
             <input
               class="input"
               type="text"
@@ -183,6 +240,18 @@
           </div>
           <step-button :next="false" :submit-button="true" v-on:click-submit="submit()"></step-button>
         </div>
+
+        <div class="pricing-container has-text-centered" v-show="formRecieved">
+          <div class="content is-large has-text-info">
+            <label>ส่งแบบฟอร์มเรียบร้อยแล้ว</label>
+            <p>ผมจะทำการตอบกลับทางอีเมลพร้อมกับใบเสนอราคาครับ</p>
+            <router-link
+              to="/"
+              class="navigation-action-button w-button"
+              v-show="$root.page == 'page'"
+            >กลับหน้าแรก</router-link>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -195,6 +264,7 @@ export default {
   },
   data() {
     return {
+      formRecieved: false,
       step: 1,
       totalSteps: 9,
       form: {
@@ -203,8 +273,9 @@ export default {
         email: null,
         contact: null,
         address: null,
-        websiteFor: null,
+        //websiteFor: null,
         hasLogo: false,
+        hasDesign: false,
         goal: null,
         oldWebsite: null,
         functionalities: [],
@@ -219,7 +290,8 @@ export default {
         "ระบบร้านค้า (Ecommerce)",
         "ระบบจัดการข้อมูล (CMS)",
         "ระบบสมาชิก",
-        "ระบบค้นหา"
+        "ระบบค้นหา",
+        "สองภาษา (ไทย, อังกฤษ)"
       ],
       deadlines: [
         "ภายใน 1 สัปดาห์",
@@ -229,15 +301,7 @@ export default {
         "ภายใน 3 เดือน",
         "ภายใน 6 เดือน"
       ],
-      overlay: false,
-      dropzoneOptions: {
-        url: "https://httpbin.org/post",
-        thumbnailWidth: 150,
-        maxFilesize: 0.5,
-        autoProcessQueue: false,
-        addRemoveLinks: true,
-        headers: { "My-Awesome-Header": "header value" }
-      }
+      overlay: false
     };
   },
   watch: {
@@ -247,7 +311,7 @@ export default {
 
         setTimeout(() => {
           this.overlay = false;
-        }, 0);
+        }, 200);
       }
     }
   },
@@ -260,11 +324,34 @@ export default {
       }
     },
     submit() {
-      console.log('SEND')
+      this.$root.loading = true;
+      const createdAt = new Date();
+      const data = this.form;
+      this.$db.collection("qoutes").add({ data, createdAt });
+      this.lineNotify()
+      this.formRecieved = true;
+      this.step = 0;
+      this.$root.loading = false;
+    },
+    lineNotify() {
+      const lineToken = "DyLBVWkbvpoNj0xGKdGOqpyhtZJ4zC6v2tZVvh37lG6";
+      const msg = {message: `You have in comming qoutation request from ${ this.form.name }`}
+      axios
+        .post(
+          `${"https://cors-anywhere.herokuapp.com/"}https://notify-api.line.me/api/notify`,
+          msg,
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              Authorization: "Bearer " + lineToken
+            },
+            params: msg
+          }
+        );
     }
   },
   created() {
-    this.$root.page = "page";
+    this.$root.page = "pricing";
     this.$parent.menu = false;
   }
 };

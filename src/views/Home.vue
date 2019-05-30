@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="page-content">
     <div class="intro-background">
       <div class="intro-container w-container">
         <div class="intro-wrapper">
@@ -182,7 +182,7 @@
         <h2 class="section-title centered">ขั้นตอนการทำงาน</h2>
         <h4 class="work-agreement">
           *โปรดอ่าน
-          <router-link to="/agreement" class="page-link">ข้อตกลงในการทำงาน</router-link>ก่อน
+          <router-link to="/agreement" class="page-link">ข้อตกลงในการทำงาน</router-link> ก่อน
         </h4>
         <div class="workflow-wrapper">
           <div class="workflow-process-line"></div>
@@ -211,11 +211,11 @@
             <h4 class="workflow-step-title">ออกแบบเว็บไซต์</h4>
             <div class="workflow-detail">
               อาจส่งเป็น
-              <span class="pink-font">แบบร่าง</span>
-              <span class="pink-font">(Wireframe)</span>
+              <span class="has-text-info">แบบร่าง</span>
+              <span class="has-text-info">(Wireframe)</span>
               <br>หรือ
-              <span class="pink-font">ไฟล์ดีไซน์&nbsp;(xd)</span> หรือ
-              <span class="pink-font">ตัวอย่างเว็บไซต์จริง</span>
+              <span class="has-text-info">ไฟล์ดีไซน์&nbsp;(xd)</span> หรือ
+              <span class="has-text-info">ตัวอย่างเว็บไซต์จริง</span>
               <br>ขึ้นอยู่กับความซับซ้อนของโปรเจค
             </div>
             <!-- <div class="workflow-detail">
@@ -265,13 +265,19 @@
             >เข้าชมเว็บไซต์</a>
           </div>
         </div>
-      </div>
-    </div>
-    <div id="contact" class="section pink">
-      <div class="container w-container">
-        <h2 class="section-title centered">ติดต่อได้ที่</h2>
-        <h3 class="centered">tanatwat@peachmedia.com</h3>
-        <h3 class="centered">092-273-0725</h3>
+        <h2 class="section-title centered">ตัวอย่างงานอื่น</h2>
+        <p class="centered is-size-5">*เป็นเพียงตัวอย่างไม่ได้ใช้จริง</p>
+        <div class="columns">
+          <div class="column">
+            <a class="demo-link" href="https://caffe-coffee.webflow.io"><img src="../assets/images/Caffe.jpg" alt=""></a>
+          </div>
+          <div class="column">
+            <a class="demo-link" href="https://jergun.webflow.io"><img src="../assets/images/JerGun.jpg" alt=""></a>
+          </div>
+          <div class="column">
+            <a class="demo-link" href="https://urban-block.webflow.io"><img src="../assets/images/Urbanblock.jpg" alt=""></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -291,4 +297,13 @@ export default {
 <style lang="sass">
   .intro-background
     background-image: url('../assets/images/Background-Waves.svg')
+  .demo-link
+    img
+      box-shadow: 0 2px 5px 0 #b5b5b5
+      border-radius: 8px
+      transform: scale(0.9, 0.9)
+      transition: all .3s ease
+      &:hover
+        transform: scale(1, 1)
+        box-shadow: 0 8px 12px 3px #c2c2c2
 </style>
