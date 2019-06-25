@@ -11,7 +11,7 @@
     <h2 class="section-title">ค่าทำเว็บไซต์</h2>
     <h3 class="section-title">
       เริ่มต้นที่
-      <span class="success-font">15,000</span> บาท
+      <span class="success-font">12,000</span> บาท
       <br>
       <span class="is-size-5 has-text-grey">*ไม่รวมค่าโฮสต์และโดเมน</span>
     </h3>
@@ -71,7 +71,7 @@
 
     <div class="package-wrapper has-text-centered">
       <h3 class="section-title">แพ็คเกจโฮสต์ CMS</h3>
-      <p>*ราคานี้เป็นบริการของ Webflow ถ้าเป็นโฮสต์อื่นอาจเป็นอีกราคา</p>
+      <p>*ราคานี้เป็นบริการของ Webflow</p>
     </div>
     <div class="columns is-multiline is-mobile has-text-centered pricing-table pricing-header">
       <div class="column is-4-desktop is-hidden-mobile"></div>

@@ -46,7 +46,7 @@
 
     <div class="package-wrapper has-text-centered">
       <h3 class="section-title">แพ็คเกจโฮสต์ Ecommerce</h3>
-      <p>*ราคานี้เป็นบริการของ Webflow ถ้าเป็นโฮสต์อื่นอาจเป็นอีกราคา</p>
+      <p>*ราคานี้เป็นบริการของ Webflow</p>
     </div>
     <div class="columns is-multiline is-mobile has-text-centered pricing-table pricing-header">
       <div class="column is-3-desktop is-hidden-mobile"></div>
@@ -63,7 +63,7 @@
         <!-- BASE 18,000 HOST 16,900 -->
         <!-- <p class="is-marginless">เริ่มต้น 34,900 บาท</p> -->
         <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">32,900 บาท/ปี</p>
+        <p class="has-text-grey is-marginless">34,900 บาท/ปี</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 1,990 บาท</p> -->
       </div>
       <div class="column is-3-desktop">
@@ -71,7 +71,7 @@
         <!-- BASE 18,000 HOST 16,900 -->
         <!-- <p class="is-marginless">เริ่มต้น 34,900 บาท</p> -->
         <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">92,900 บาท/ปี</p>
+        <p class="has-text-grey is-marginless">99,900 บาท/ปี</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 1,990 บาท</p> -->
       </div>
     </div>

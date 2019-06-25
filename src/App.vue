@@ -43,9 +43,9 @@
         class="navigation-links-mobile w-nav-menu"
         v-show="menu && $root.page == 'home'"
       >
-        <a href="#services" class="navigation-link w-nav-link">บริการ</a>
-        <a href="#process" class="navigation-link w-nav-link">ขั้นตอนการทำงาน</a>
-        <a href="#clients" class="navigation-link w-nav-link">ตัวอย่างงาน</a>
+        <a href="#services" class="navigation-link w-nav-link" @click="menu = false">บริการ</a>
+        <a href="#process" class="navigation-link w-nav-link" @click="menu = false">ขั้นตอนการทำงาน</a>
+        <a href="#clients" class="navigation-link w-nav-link" @click="menu = false">ตัวอย่างงาน</a>
           <router-link
             to="/pricing"
             class="navigation-link w-nav-link"
@@ -70,13 +70,14 @@
         <div class="footer-wrap">
           <img src="./assets/images/Logo.png" class="footer-logo">
           <p>
-            <i class="fas fa-envelope"></i>&nbsp;tanatwat@peachmedia.cc
+            <i class="fas fa-envelope"></i>&nbsp;{{ contact.email }}
           </p>
           <p>
-            <i class="fas fa-phone"></i>&nbsp;093-939-8297
+            <i class="fas fa-phone"></i>&nbsp;{{ contact.phone }}
           </p>
           <p class="centered">
-            วันจันทร์ - ศุกร์
+            โทรศัพท์เฉพาะ
+            <br>วันจันทร์ - เสาร์
             <br>9.30 - 17.00
           </p>
           <a
@@ -85,7 +86,7 @@
             target="_blank"
             style="align-self:center"
           >
-            <i class="fab fa-line"></i>&nbsp;เพิ่มเพื่อน
+            <i class="fab fa-line"></i>&nbsp;{{ lineButton }}
           </a>
         </div>
         <div class="legal">
@@ -100,11 +101,12 @@
       <transition name="fade">
         <div class="contacts" v-show="contactsModal">
           <i class="fas fa-envelope basic-font"></i>
-          <p>tanatwat@peachmedia.cc</p>
+          <p>{{ contact.email }}</p>
           <i class="fas fa-phone basic-font"></i>
           <p>
-            093-939-8297
-            <br>วันจันทร์ - ศุกร์
+            {{ contact.phone }}
+            <br>โทรศัพท์เฉพาะ
+            <br>วันจันทร์ - เสาร์
             <br>9.30 - 17.00
           </p>
           <a
@@ -113,7 +115,7 @@
             target="_blank"
             style="align-self:center"
           >
-            <i class="fab fa-line"></i>&nbsp;เพิ่มเพื่อน
+            <i class="fab fa-line"></i>&nbsp;{{ lineButton }}
           </a>
         </div>
       </transition>
@@ -139,7 +141,12 @@ export default {
       webUrl: "peachmedia.cc",
       prevHeight: 0,
       contactsModal: false,
-      allowContacts: true
+      allowContacts: true,
+      lineButton: '@peachmedia',
+      contact: {
+        email: 'tanatwat.w@gmail.com',
+        phone: '092-273-0725'
+      }
     };
   },
   methods: {
@@ -265,7 +272,7 @@ $animationDuration: .3s // specify animation duration. Default value: 1s
   padding: 8px 12px 8px 0
   text-decoration: none
   font-size: 1rem
-  width: 120px
+  width: 165px
   transition: all .2s ease
   > i
     position: absolute

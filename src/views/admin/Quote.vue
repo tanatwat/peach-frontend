@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="qoute" :class="{'active' : toggle == index}" v-for="(item, index) in qoutes">
+    <div class="qoute" :class="{'active' : toggle == index}" v-for="(item, index) in quotes">
       <div class="is-flex">
         <a class="fas fa-trash-alt" @click="remove(index, item.id)"></a>&nbsp;
         <div class="qoute-title" :class="{'active' : toggle == index}" @click="toggleList(index)">
@@ -21,9 +21,12 @@
           <span v-for="func in item.data.functionalities">{{ func }} /</span>
         </p>
         <p>{{ item.data.hasLogo ? 'มีโลโก้' : 'ไม่มีโลโก้' }} / {{ item.data.oldWebsite }}</p>
+        <p><strong>Host</strong>
+        {{ item.data.hosting ? 'ต้องการโฮสต์' : 'ไม่ต้องการโฮสต์' }}
+        </p>
         <p class="has-text-info">จำนวนหน้า {{ item.data.totalPage }} /**{{ item.data.pageName }}</p>
         <p>
-          <strong>Desc</strong>
+          <strong>Description</strong>
           {{ item.data.description }}
         </p>
         <p>
@@ -44,13 +47,13 @@
 export default {
   data() {
     return {
-      qoutes: [],
+      quotes: [],
       toggle: null
     };
   },
   firestore() {
     return {
-      qoutes: this.$db.collection("qoutes").orderBy("createdAt", "desc")
+      quotes: this.$db.collection("quotes").orderBy("createdAt", "desc")
     };
   },
   methods: {
@@ -64,7 +67,7 @@ export default {
     remove(index, id) {
       if (confirm("You sure?")) {
         this.$db
-          .collection("qoutes")
+          .collection("quotes")
           .doc(id)
           .delete();
       }

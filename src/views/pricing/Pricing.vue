@@ -28,6 +28,7 @@
             <br>เพื่อทำการประเมิณราคาเว็บไซต์ของลูกค้า
             <br>หลังจากนั้นผมจะออกใบเสนอราคาให้
             <br>ส่วนใหญ่แล้วจะใช้เวลาไม่เกิน 1 วัน
+            <br>และทำการส่งให้ลูกค้าทางอีเมล
             <br>ถ้าผมมีคำถามเพิ่มเติม
             <br class="is-hidden-desktop">ผมจะทำการติดต่อกลับไปครับ
           </div>
@@ -165,6 +166,27 @@
         </div>
 
         <div class="pricing-container has-text-centered" v-show="step == 5">
+          <label>คุณต้องการโฮสต์กับโดเมนหรือไม่?</label>
+          <div class="level is-mobile" style="justify-content: space-around">
+            <input class="is-hidden" type="radio" id="Host" :value="true" v-model="form.hosting">
+            <label
+              class="radio-input"
+              :class="{'checked' : form.hosting}"
+              for="Host"
+              style="width: 40%"
+            >
+              <i class="fas fa-check" v-show="form.hosting"></i>&nbsp;ใช่
+            </label>
+            <input class="is-hidden" type="radio" id="noHost" :value="false" v-model="form.hosting">
+            <label
+              class="radio-input"
+              :class="{'checked' : !form.hosting}"
+              for="noHost"
+              style="width: 40%"
+            >
+              <i class="fas fa-check" v-show="!form.hosting"></i>&nbsp;ไม่
+            </label>
+          </div>
           <div class="content is-large has-text-info">
             <label>คุณต้องการให้เว็บไซต์ทำอะไรได้บ้าง?</label>
             <div v-for="(choice, index) in webFunctions">
@@ -276,6 +298,7 @@ export default {
         //websiteFor: null,
         hasLogo: false,
         hasDesign: false,
+        hosting: true,
         goal: null,
         oldWebsite: null,
         functionalities: [],
@@ -327,27 +350,28 @@ export default {
       this.$root.loading = true;
       const createdAt = new Date();
       const data = this.form;
-      this.$db.collection("qoutes").add({ data, createdAt });
-      this.lineNotify()
+      this.$db.collection("quotes").add({ data, createdAt });
+      this.lineNotify();
       this.formRecieved = true;
       this.step = 0;
       this.$root.loading = false;
     },
     lineNotify() {
       const lineToken = "DyLBVWkbvpoNj0xGKdGOqpyhtZJ4zC6v2tZVvh37lG6";
-      const msg = {message: `You have in comming qoutation request from ${ this.form.name }`}
-      axios
-        .post(
-          `${"https://cors-anywhere.herokuapp.com/"}https://notify-api.line.me/api/notify`,
-          msg,
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-              Authorization: "Bearer " + lineToken
-            },
-            params: msg
-          }
-        );
+      const msg = {
+        message: `You have in comming qoutation request from ${this.form.name}`
+      };
+      axios.post(
+        `${"https://cors-anywhere.herokuapp.com/"}https://notify-api.line.me/api/notify`,
+        msg,
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Authorization: "Bearer " + lineToken
+          },
+          params: msg
+        }
+      );
     }
   },
   created() {

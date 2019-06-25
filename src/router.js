@@ -7,8 +7,8 @@ import Pricing from './views/pricing/Pricing.vue'
 import DomainChecker from './views/DomainChecker.vue'
 
 import Dashboard from './views/admin/Dashboard.vue'
-import Qoute from './views/admin/Qoute.vue'
-import QouteGenerator from './views/admin/QouteGenerator.vue'
+import Quote from './views/admin/Quote.vue'
+//import QouteGenerator from './views/admin/QouteGenerator.vue'
 
 Vue.use(Router)
 
@@ -57,12 +57,8 @@ export default new Router({
       children: [
         {
           path: 'qoute',
-          component: Qoute
-        },
-        {
-          path: 'qoute-create',
-          component: QouteGenerator
-        },
+          component: Quote
+        }
       ]
     }
   ]
