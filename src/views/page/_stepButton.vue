@@ -1,17 +1,17 @@
 <template>
-  <div :class="wrapper">
+  <div :class="wrapper" style="margin-top: 1.75rem">
     <div>
-      <button class="pricing-button" @click="changeStep('back')" v-show="back">
+      <button class="quote-button" @click="changeStep('back')" v-show="back">
         <i class="fas fa-caret-left"></i>
-        &nbsp;{{ backText }}
+        &nbsp;{{ backText ? backText : $t('quote.back') }}
       </button>
     </div>
     <div>
-      <button class="pricing-button" @click="changeStep('next')" v-show="next">
-        {{ nextText }}&nbsp;
+      <button class="quote-button" @click="changeStep('next')" v-show="next">
+        {{ nextText ? nextText : $t('quote.next') }}&nbsp;
         <i class="fas fa-caret-right"></i>
       </button>
-      <button class="pricing-button" @click="$emit('click-submit')" v-show="submitButton">
+      <button class="quote-button" @click="$emit('click-submit')" v-show="submitButton">
         ส่งแบบฟอร์ม&nbsp;
         <i class="fas fa-check"></i>
       </button>
@@ -26,13 +26,13 @@ export default {
       default: true
     },
     backText: {
-       default: 'ย้อนกลับ'
+       default: null
     },
     next: {
       default: true
     },
     nextText: {
-      default: 'ต่อไป'
+      default: null
     },
     wrapper: {
       default: 'level is-mobile'

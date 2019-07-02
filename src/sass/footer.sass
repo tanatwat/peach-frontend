@@ -1,0 +1,125 @@
+.footer-wrapper
+   display: flex
+   flex-direction: column
+   justify-content: center
+   align-items: center
+   padding: 2rem 0 1.75rem 0
+.footer-right
+   display: flex
+   justify-content: center
+.footer-logo
+   width: 150px
+   margin-bottom: 1rem
+.footer-link
+   width: 35px
+   height: 35px
+   text-align: center
+   margin: 6px
+   color: #ff3860
+   background: #222
+   border-radius: 5px
+   border: none
+   &:hover
+      color: #fff
+      background: #ff3860
+   &.fas
+      font-size: 1.3rem
+   &.fab
+      font-size: 1.6rem
+
+.legal
+   color: #ff3860 !important
+   padding: 8px 0
+   color: #fff
+   text-align: center
+
+.contact-wrapper
+   position: fixed
+   bottom: 2rem
+   right: 2rem
+   text-align: right
+   z-index: 9999
+ 
+.contact-btn
+   padding: 12px 20px
+   border: none
+   background: #36c137
+   color: #fff
+   font-size: 1.1rem
+   border-radius: 5px
+   &:hover
+      background: darken(#36c137, 5%)
+   i
+      display: none
+
+.contact-box
+   position: relative
+   background: rgba(0, 0, 0, .8)
+   padding: 1rem 1.75rem
+   border-radius: 5px
+   margin-bottom: 1rem
+   text-align: center
+   color: #fff
+   > i
+      color: #ff3860
+@media(max-width: 768px)
+   .contact-wrapper
+      bottom: 1rem
+      right: 1rem
+
+@media(max-width: 425px)
+   .contact-wrapper
+      bottom: 1rem
+      right: 1rem
+   .contact-box
+      margin-bottom: .75rem !important
+   .contact-btn
+      position: relative
+      border-radius: 50%
+      width: 50px
+      height: 50px
+      i
+         font-size: 1.5rem
+         display: block
+         position: absolute
+         top: 13px
+         left: 14px
+      font
+         display: none
+
+.add-friend
+   align-self: center
+   padding: 8px
+   background: #10b111 !important
+   border: 1px solid #10b111 !important
+   color: #fff !important
+   border-radius: 5px
+   margin-top: 1rem
+   i
+      font-size: 1.5rem
+
+.footer-locale
+   padding-top: 1rem
+
+.locale-btn
+   margin-left: -30px
+   width: 30px
+   height: 30px
+   background: red
+   border: none
+   border-radius: 50%
+   background-repeat: no-repeat
+   background-size: 30px
+   background-position: center
+   &.en
+      background-image: url('./assets/images/en.svg')
+      &::after
+         color: #fff
+         margin-left: 30px
+         content: 'EN'
+   &.th
+      background-image: url('./assets/images/th.svg')
+      &::after
+         color: #fff
+         margin-left: 30px
+         content: 'TH'

@@ -1,97 +1,28 @@
 <template>
-  <div
-    class="tab-content w-tab-pane"
-    :class="{'w--tab-active' : $parent.tab == 1}"
-  >
-    <h2 class="section-title basic-font">Basic Package</h2>
-    <p class="service-paragraph">
-      เว็บไซต์สำหรับแสดงสิ่งที่คุณต้องการ ไม่ว่าจะเป็นธุรกิจ
-      <br>แสดงผลงาน ผลิตภัณฑ์ สร้างความเชื่อถือกับลูกค้าของคุณ
-    </p>
-    <h2 class="section-title">ค่าทำเว็บไซต์</h2>
-    <h3 class="section-title">
-      เริ่มต้นที่
-      <span class="success-font">12,000</span> บาท
-      <br>
-      <span class="is-size-5 has-text-grey">*ไม่รวมค่าโฮสต์และโดเมน</span>
-    </h3>
-    <div class="package-wrapper">
-       <router-link to="/pricing" class="price-button w-button">ขอใบเสนอราคาที่นี่</router-link>
-    </div>
-    
-    <div class="package-wrapper">
-      <h2 class="package-title">โฮสต์ และ โดเมน</h2>
-      <h2 class="package-title">Standard</h2>
-      <p class="service-paragraph">
-        ไม่มีการเก็บข้อมูล หรือระบบจัดการใดๆ
-        <span class="basic-font"></span>
-        <br>
-      </p>
-      <h4 class="section-title">
-        ค่าโดเมน และ โฮสต์
-        <br>เริ่มต้นที่
-        <span class="success-font">3,900</span> บาท/ปี
-      </h4>
-      <p class="service-paragraph">
-        <span class="basic-font">
-          *ไม่มีการเก็บข้อมูลผ่านแบบฟอร์ม (เพิ่มได้)
-          <br>*ไม่สามารถแก้ไขได้ด้วยตัวเอง
-        </span>
-        <br>
-      </p>
-    </div>
-    <div class="package-wrapper">
-      <h2 class="section-title">CMS</h2>
-      <p class="service-paragraph">
-        เพิ่มระบบจัดการเนื้อหาบนเว็บไซต์
-        <br>คุณสามารถแก้ไขข้อมูลบางส่วนบนหน้าเว็บได้
-        <br>รวมทั้งสามารถเก็บข้อมูล เช่น บทความ ผลงาน
-        <br>และนำมาแสดงผลบนเว็บไซต์ได้ โดยใช้บริการจาก
-        <a
-          href="https://webflow.com"
-          class="span-link"
-          target="_blank"
-        >Webflow</a>
-        <br>
-      </p>
-      <h3 class="section-title"></h3>
-      <h4 class="section-title">
-        ค่าโดเมน และ โฮสต์
-        <br>เริ่มต้นที่
-        <span class="success-font">8,900</span> บาท/ปี
-      </h4>
-      <p class="service-paragraph">
-        <span class="basic-font">
-          *สามารถเก็บข้อมูลผ่านแบบฟอร์มได้
-          <br>*สามารถเพิ่มข้อมูล และแก้ไขหน้าเว็บบางส่วนได้
-        </span>
-        <br>
-      </p>
+  <div class="hosting-wrapper">
+    <div class="content is-size-4-desktop is-size-5-tablet">
+      <h3 class="has-text-centered-mobile has-text-primary">{{ $t('hosting.cms_hosting') }}</h3>
+      <p>{{ $t('hosting.cms_hosting_desc') }}</p>
     </div>
 
-    <div class="package-wrapper has-text-centered">
-      <h3 class="section-title">แพ็คเกจโฮสต์ CMS</h3>
-      <p>*ราคานี้เป็นบริการของ Webflow</p>
-    </div>
     <div class="columns is-multiline is-mobile has-text-centered pricing-table pricing-header">
       <div class="column is-4-desktop is-hidden-mobile"></div>
       <div class="column is-4-desktop">
         <!-- BASE 18,000 HOST 8,900 -->
-        <p class="is-size-5 basic-font is-marginless">ธรรมดา</p>
+        <p class="is-size-5 basic-font is-marginless has-text-primary">{{ $t('hosting.basic') }}</p>
         <!-- <p class="is-marginless">เริ่มต้น 26,900 บาท</p> -->
-        <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">8,900 บาท/ปี</p>
+        <p class="is-marginless">8,900 {{ $t('hosting.yearly') }}</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 990 บาท</p> -->
       </div>
       <div class="column is-4-desktop">
-        <p class="is-size-5 basic-font is-marginless">ธุรกิจ</p>
+        <p class="is-size-5 basic-font is-marginless has-text-primary">{{ $t('hosting.business') }}</p>
         <!-- BASE 18,000 HOST 16,900 -->
         <!-- <p class="is-marginless">เริ่มต้น 34,900 บาท</p> -->
-        <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">16,900 บาท/ปี</p>
+        <p class="is-marginless">16,900 {{ $t('hosting.yearly') }}</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 1,990 บาท</p> -->
       </div>
     </div>
+
     <div
       class="columns is-multiline is-mobile has-text-centered pricing-table"
       v-for="(item, index) in basicPackage"
@@ -124,16 +55,59 @@
         ></i>
       </div>
     </div>
-    <div class="section"></div>
   </div>
 </template>
 
 <script>
+import { log } from "util";
 export default {
   data() {
     return {
       toggleDesc: null,
-      basicPackage: [
+      basicPackage: null,
+      en: [
+        {
+          title: "Monthly visits",
+          basic: "25,000",
+          cms: "100,000",
+          business: "1,000,000",
+          desc:
+            "The number of unique daily visits you can get to your site every month."
+        },
+        {
+          title: "Form submissions",
+          basic: "500",
+          cms: "1,000",
+          business: "unlimited",
+          desc:
+            "Collect form submissions, customize notification emails, and download submissions as a CSV. $1 per 100 extra submissions."
+        },
+        {
+          title: "CMS items",
+          basic: null,
+          cms: "2,000",
+          business: "10,000",
+          desc:
+            "The maximum number of records you can have in your CMS database. Ex: 50 projects in a portfolio."
+        },
+        {
+          title: "Site search",
+          basic: null,
+          cms: true,
+          business: true,
+          desc:
+            "Create a custom search engine and let visitors search for specific content on your site."
+        },
+        {
+          title: "Form file upload",
+          basic: null,
+          cms: false,
+          business: true,
+          desc:
+            "Collect files with an upload button in forms. Max file size per upload is 10MB. Storage is free up to 10GB"
+        }
+      ],
+      th: [
         {
           title: "จำกัดผู้เข้าชมต่อเดือน",
           basic: "25,000",
@@ -176,6 +150,13 @@ export default {
       ]
     };
   },
+  watch: {
+    "$i18n.locale": {
+      handler() {
+        this.changeLocale();
+      }
+    }
+  },
   methods: {
     toggle(index) {
       if (index == this.toggleDesc) {
@@ -183,7 +164,17 @@ export default {
       } else {
         this.toggleDesc = index;
       }
+    },
+    changeLocale() {
+      if (this.$i18n.locale == "en") {
+        this.basicPackage = this.en;
+      } else {
+        this.basicPackage = this.th;
+      }
     }
+  },
+  created() {
+    this.changeLocale();
   }
 };
 </script>

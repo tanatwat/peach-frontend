@@ -1,80 +1,36 @@
 <template>
-  <div class="tab-content w-tab-pane" :class="{'w--tab-active' : $parent.tab == 2}">
-    <h2 class="section-title ecom-font">Ecommerce Package</h2>
-    <p class="service-paragraph">
-      เปิดร้านค้าออนไลน์ของคุณเอง พร้อมระบบจัดการหลังร้าน
-      <br>ลูกค้าของคุณสามารถช็อป และชำระเงินออนไลน์ได้อย่างง่ายดาย
-      <br>
-    </p>
-    <h2 class="section-title">ค่าทำเว็บไซต์</h2>
-    <h3 class="section-title">
-      เริ่มต้นที่
-      <span class="success-font">25,000</span> บาท
-      <br>
-      <span class="is-size-5 has-text-grey">*ไม่รวมค่าโฮสต์และโดเมน</span>
-    </h3>
-    <div class="package-wrapper">
-      <router-link to="/pricing" class="price-button w-button">ขอใบเสนอราคาที่นี่</router-link>
-    </div>
-
-    <div class="package-wrapper">
-      <h2 class="package-title">โฮสต์ และ โดเมน</h2>
-      <h2 class="package-title">Ecommerce</h2>
-      <p class="service-paragraph">
-        คุณสามารถแก้ไขหน้าเว็บไซต์บางส่วน
-        <br>และเก็บข้อมูลทุกอย่างได้เหมือนแพ็คเกจ CMS
-        <br>สิ่งที่เพิ่มมาคือ ระบบหลังร้าน รถเข็น และชำระเงิน
-      </p>
-      <h4 class="section-title">
-        ค่าโดเมน และ โฮสต์
-        <br>เริ่มต้นที่
-        <span class="success-font">13,900</span> บาท/ปี
-      </h4>
-      <p class="service-paragraph">
-        <span class="basic-font">
-          *ลงสินค้าให้ฟรี 10 ชิ้น
-          <br>*คุณสามารถแก้ไขข้อมูลบางส่วนบนหน้าเว็บได้
-          <br>*ระบบหลังร้านและจัดการข้อมูล เป็นบริการจาก
-          <a
-            href="https://webflow.com"
-            class="span-link"
-            target="_blank"
-          >Webflow</a>
-        </span>
-      </p>
-    </div>
-
-    <div class="package-wrapper has-text-centered">
-      <h3 class="section-title">แพ็คเกจโฮสต์ Ecommerce</h3>
-      <p>*ราคานี้เป็นบริการของ Webflow</p>
+  <div class="hosting-wrapper">
+    <div class="content is-size-4-desktop is-size-5-tablet">
+      <h3 class="has-text-centered-mobile has-text-primary">{{ $t('hosting.ecom_hosting') }}</h3>
+      <p>{{ $t('hosting.ecom_hosting_desc') }}</p>
     </div>
     <div class="columns is-multiline is-mobile has-text-centered pricing-table pricing-header">
       <div class="column is-3-desktop is-hidden-mobile"></div>
       <div class="column is-3-desktop">
         <!-- BASE 18,000 HOST 8,900 -->
-        <p class="is-size-5 basic-font is-marginless">ธรรมดา</p>
+        <p class="is-size-5 basic-font is-marginless has-text-primary">{{ $t('hosting.basic') }}</p>
         <!-- <p class="is-marginless">เริ่มต้น 26,900 บาท</p> -->
-        <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">13,900 บาท/ปี</p>
+        <p class="is-marginless">13,900 {{ $t('hosting.yearly') }}</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 990 บาท</p> -->
       </div>
       <div class="column is-3-desktop">
-        <p class="is-size-5 basic-font is-marginless">ธุรกิจ</p>
+        <p class="is-size-5 basic-font is-marginless has-text-primary">{{ $t('hosting.business') }}</p>
         <!-- BASE 18,000 HOST 16,900 -->
         <!-- <p class="is-marginless">เริ่มต้น 34,900 บาท</p> -->
-        <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">34,900 บาท/ปี</p>
+        <p class="is-marginless">34,900 {{ $t('hosting.yearly') }}</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 1,990 บาท</p> -->
       </div>
       <div class="column is-3-desktop">
-        <p class="is-size-5 basic-font is-marginless">องค์กร</p>
+        <p
+          class="is-size-5 basic-font is-marginless has-text-primary"
+        >{{ $t('hosting.enterprise') }}</p>
         <!-- BASE 18,000 HOST 16,900 -->
         <!-- <p class="is-marginless">เริ่มต้น 34,900 บาท</p> -->
-        <p class="has-text-grey is-marginless">โฮสต์ + โดเมน</p>
-        <p class="has-text-grey is-marginless">99,900 บาท/ปี</p>
+        <p class="is-marginless">99,900 {{ $t('hosting.yearly') }}</p>
         <!-- <p class="has-text-grey is-marginless">รายเดือน 1,990 บาท</p> -->
       </div>
     </div>
+
     <div
       class="columns is-multiline is-mobile has-text-centered pricing-table"
       v-for="(item, index) in ecomPackage"
@@ -114,7 +70,6 @@
         ></i>
       </div>
     </div>
-    <div class="section"></div>
   </div>
 </template>
 
@@ -123,7 +78,53 @@ export default {
   data() {
     return {
       toggleDesc: null,
-      ecomPackage: [
+      ecomPackage: null,
+      en: [
+        {
+          title: "Includes",
+          standard: "All features from CMS Basic plan",
+          plus: "All features from CMS Business plan",
+          advanced: "All features from CMS Business plan",
+          desc: null
+        },
+        {
+          title: "Unbranded emails",
+          standard: false,
+          plus: true,
+          advanced: true,
+          desc: "Remove Webflow references from transaction email footers."
+        },
+        {
+          title: "Transaction fee",
+          standard: "2%",
+          plus: "0%",
+          advanced: "0%",
+          desc: "In addition to Stripe processing fees."
+        },
+        {
+          title: "Staff accounts",
+          standard: "3",
+          plus: "10",
+          advanced: "15",
+          desc:
+            "Invite colleagues and clients to manage products, inventory, and fulfillment."
+        },
+        {
+          title: "Products",
+          standard: "500",
+          plus: "1,000",
+          advanced: "3,000",
+          desc: "Amount of products you can have on the website."
+        },
+        {
+          title: "Yearly sales volume",
+          standard: "$50K around 1.5 million THB",
+          plus: "$200K around 6 million THB",
+          advanced: "unlimited",
+          desc: "Calculated on a trailing 12-month basis."
+        }
+      ],
+      th: [
         {
           title: "มีฟังก์ชั่นจากแพ็คเกจ CMS",
           standard: "ธรรมดา",
@@ -170,6 +171,13 @@ export default {
       ]
     };
   },
+  watch: {
+    "$i18n.locale": {
+      handler() {
+        this.changeLocale();
+      }
+    }
+  },
   methods: {
     toggle(index) {
       if (index == this.toggleDesc) {
@@ -177,7 +185,17 @@ export default {
       } else {
         this.toggleDesc = index;
       }
+    },
+    changeLocale() {
+      if (this.$i18n.locale == "en") {
+        this.ecomPackage = this.en;
+      } else {
+        this.ecomPackage = this.th;
+      }
     }
+  },
+  created() {
+    this.changeLocale();
   }
 };
 </script>

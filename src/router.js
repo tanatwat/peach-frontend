@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Agreement from './views/Agreement.vue'
-import Service from './views/services/Service.vue'
-import Pricing from './views/pricing/Pricing.vue'
+import Pricing from './views/page/Pricing.vue'
+import RequestQuote from './views/page/Quote.vue'
 import DomainChecker from './views/DomainChecker.vue'
 
 import Dashboard from './views/admin/Dashboard.vue'
-import Quote from './views/admin/Quote.vue'
+import AdminQuote from './views/admin/Quote.vue'
 //import QouteGenerator from './views/admin/QouteGenerator.vue'
 
 Vue.use(Router)
@@ -30,18 +30,12 @@ export default new Router({
       component: Agreement
     },
     {
-      path: '/services/:service',
-      name: 'services',
-      component: Service
+      path: '/request-quote',
+      component: RequestQuote
     },
     {
       path: '/pricing',
-      name: 'pricing',
       component: Pricing
-    },
-    {
-      path: '/domain',
-      component: DomainChecker
     },
     {
       path: '/about',
@@ -57,7 +51,7 @@ export default new Router({
       children: [
         {
           path: 'qoute',
-          component: Quote
+          component: AdminQuote
         }
       ]
     }

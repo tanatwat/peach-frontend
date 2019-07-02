@@ -1,0 +1,85 @@
+.pricing-grid
+   margin: 3rem 0
+   display: grid
+   grid-template-columns: repeat(3, 1fr)
+   grid-template-rows: 2fr
+   grid-column-gap: .5rem
+   grid-row-gap: 1rem
+   justify-items: center
+   align-items: center
+.pricing-box
+   display: flex
+   flex-direction: column
+   width: 100%
+   height: 100%
+   background-color: #fff
+   padding: 1.75rem 0 1.5rem 0
+   border-radius: 2px
+   .title
+      color: #333
+      font-weight: normal !important
+      font-size: 1.4rem
+      margin-bottom: .75rem
+   .description
+      flex-grow: 1
+      padding: 1rem 1.75rem
+      border-top: 1px solid #ddd
+      border-bottom: 1px solid #ddd
+      color: #555
+      font-size: 1rem
+   .price
+      margin: 0 auto
+      margin-bottom: 1rem
+      span
+         color: #ff3860
+         font-weight: normal
+         font-size: 1rem
+         padding-right: .75rem
+      strong
+         color: #ff3860
+   .quote-btn
+      padding-top: 1.5rem
+   &.has-border
+      border: 1px solid #ddd
+      box-shadow: 0 3px 3px #eee
+
+@media(max-width: 768px)  
+   .pricing-grid
+      grid-template-columns: repeat(1, .5fr)
+      justify-items: center
+      justify-content: center
+   .pricing-box .price
+      span
+         font-size: 1rem
+      strong
+         font-size: 1.3rem
+
+@media(max-width: 425px)  
+   .pricing-grid
+      grid-template-columns: repeat(1, 1fr)
+
+.benefit-list
+   margin-bottom: .75rem !important
+   &::before
+      font-family: 'Font Awesome 5 Free'
+      font-weight: 600
+      content: '\f00c'
+      color: #ff3860
+      margin-right: 1rem
+
+@media(max-width: 768px)
+   .benefit-list
+      position: relative
+      padding-left: 2rem
+      margin: 0 auto
+      max-width: 320px
+      text-align: left
+      &::before
+         position: absolute
+         left: 0
+
+.hosting-wrapper:not(:last-child)
+   padding-bottom: 4rem
+   
+.hosting-wrapper:last-child
+   padding-bottom: 6rem

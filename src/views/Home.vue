@@ -1,150 +1,45 @@
 <template>
   <div class="page-content">
-    <div class="intro-background">
-      <div class="intro-container w-container">
-        <div class="intro-wrapper">
-          <div class="intro-header-text">
-            <h1 class="intro-header-text">
-              คุณทำธุรกิจ
-              <br>
-            </h1>
-            <h1 class="intro-header-text">
-              เราทำเว็บไซต์
-              <br>
-            </h1>
-          </div>
-          <div class="intro-svgs">
-            <div class="intro-images">
-              <img
-                src="../assets/images/Desktop.svg"
-                class="intro-img desktop"
-                data-aos="fade-down"
-                data-aos-easing="ease"
-                data-aos-duration="700"
-              >
-              <img
-                src="../assets/images/Tablet.svg"
-                class="intro-img tablet"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-duration="800"
-              >
-              <img
-                src="../assets/images/Phone.svg"
-                class="intro-img phone"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-duration="900"
-              >
-              <img
-                src="../assets/images/Barrel-s.svg"
-                class="intro-img bucket"
-                data-aos="fade-left"
-                data-aos-easing="ease"
-                data-aos-duration="1200"
-              >
-            </div>
-          </div>
+    <section class="hero-section">
+      <div class="hero-wrapper container">
+        <div class="hero-text-wrapper">
+          <h2>{{ $t('hero.title') }}</h2>
+          <vue-typer
+            :text="['Frontend Developer', 'Web Designer']"
+            :repeat="Infinity"
+            :shuffle="false"
+            initial-action="typing"
+            :pre-type-delay="50"
+            :type-delay="70"
+            :pre-erase-delay="1500"
+            :erase-delay="100"
+            erase-style="backspace"
+            :erase-on-complete="false"
+            caret-animation="smooth"
+          ></vue-typer>
+          <h2>{{ $t('hero.subtitle') }}</h2>
+          <a href="#work" class="button is-primary is-large" style="margin-top:2rem">{{ $t('hero.action') }}</a>
         </div>
+        <a class="scroll-btn" href="#about"></a>
       </div>
-    </div>
-    <div id="services" class="section">
-      <div class="container w-container">
-        <h2 class="section-title centered">บริการ</h2>
-        <div class="columns">
-          <div class="column">
-            <div class="service-wrapper">
-              <div class="service-header basic">
-                <h4>Basic</h4>
-              </div>
-              <div class="service-details">
-                <div class="service-explain">
-                  เว็บไซต์บริษัท ธุรกิจ
-                  <br>แสดงผลงาน หรือผลิตภัณฑ์
-                </div>
-                <h3 class="start-at">เริ่มต้นที่</h3>
-                <h2 class="service-price">12,000 บาท</h2>
-              </div>
-              <div class="service-button-wrapper">
-                <router-link to="/services/basic" class="service-button basic w-button">รายละเอียด</router-link>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="service-wrapper">
-              <div class="service-header ecom">
-                <h4>Ecommerce</h4>
-              </div>
-              <div class="service-details">
-                <div class="service-explain">
-                  เปิดร้านค้าออนไลน์
-                  <br>พร้อมระบบหลังร้าน
-                  <br>
-                </div>
-                <h3 class="start-at">เริ่มต้นที่</h3>
-                <h2 class="service-price">25,000 บาท</h2>
-              </div>
-              <div class="service-button-wrapper">
-                <router-link to="/services/ecom" class="service-button ecom w-button">รายละเอียด</router-link>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="column">
-            <div class="service-wrapper">
-              <div class="service-header custom">
-                <h4>Custom</h4>
-              </div>
-              <div class="service-details">
-                <div class="service-explain">
-                  หากมีความต้องการอื่นๆ
-                  <br>สามารถสอบถามได้เลย
-                </div>
-              </div>
-              <div class="service-button-wrapper">
-                <a href="#contact" class="service-button custom w-button">ดูช่องทางติดต่อ</a>
-              </div>
-            </div>
-          </div>-->
+    </section>
+    <section class="section is-medium has-background-white-ter" id="about">
+      <div class="container has-text-centered-mobile">
+        <h2 class="section-title">{{ $t('intro.title1') }}</h2>
+        <div class="content is-size-4-desktop is-size-5-tablet ">
+          <p>
+            {{ $t('intro.1') }}
+            <br>{{ $t('intro.2') }}
+            <br>{{ $t('intro.3') }}
+          </p>
         </div>
-      </div>
-    </div>
-    <div id="services" class="section benefits">
-      <div class="container w-container">
-        <div class="w-layout-grid service-grid">
-          <div class="benefit-wrapper">
-            <div class="benefit-explain">
-              ดูดีบนทุกอุปกรณ์
-              <br>ใช้งานได้ทุกขนาดหน้าจอ
-            </div>
-          </div>
-          <div id="w-node-3f54eeee187d-dc4c5dcb" class="benefit-wrapper">
-            <div class="benefit-explain">
-              ออกแบบให้เข้ากับ
-              <br>กิจการหรือธุรกิจของคุณ
-            </div>
-          </div>
-          <div id="w-node-8d81ba741461-dc4c5dcb" class="benefit-wrapper">
-            <div class="benefit-explain">
-              คำนึงถึงประสบการณ์
-              <br>ที่ผู้เข้าชมเว็บไซต์จะได้รับ
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="home-content-wrap">
-          <h2 class="section-title centered">ผมมีทักษะอะไรบ้าง</h2>
-          <h4 class="centered" style="position:relative;margin-bottom:30px">
-            <!-- <i
-              class="fas fa-quote-left has-text-grey-lighter"
-              style="margin-right: 15px;position:absolute;top: -3px"
-            ></i> -->
-            <font>ผมคือ Frontend web developer<br>
-            แต่สามารถทำงาน Fullstack, Web Design ได้เช่นกัน
-            </font>
-          </h4>
+        <h2 class="section-title">{{ $t('intro.title2') }}</h2>
+        <div class="content is-size-4-desktop is-size-5-tablet ">
+          <p>
+            {{ $t('intro.4') }}
+            <br>{{ $t('intro.5') }}
+          </p>
+          <h5>{{ $t('intro.title3') }}</h5>
         </div>
         <div class="skills-wrapper">
           <div class="skill">
@@ -185,32 +80,28 @@
           </div>
         </div>
       </div>
-    </div>
-    <work-process></work-process>
-    <div id="clients" class="section grey">
-      <div class="container w-container" data-aos="fade-right">
-        <h2 class="section-title centered">ตัวอย่างงาน</h2>
-        <div class="site-showcase">
-          <div class="showcase-img-wrapper">
+    </section>
+    <section id="work" class="section is-medium">
+      <div class="container has-text-centered-mobile" data-aos="fade-right">
+        <h2 class="section-title">{{ $t('work.title') }}</h2>
+        <div class="columns is-multiline">
+          <div class="column is-6 has-text-centered">
             <img src="../assets/images/Smile-Delight-Demo.png" class="showcase-img">
           </div>
-          <div class="showcase-details-wrapper">
-            <h1 class="showcase-title">Smile Delight Clinic</h1>
-            <p class="showcase-details">
-              เว็บไซต์สำหรับคลินิกทันตกรรม
-              <br>ดีไซน์แบบมินิมอล มีเฉพาะสิ่งที่จำเป็นบนหน้าเว็บ
-              <br>
-            </p>
+          <div class="column is-6 is-align-vertical">
+            <div class="content">
+              <h2 class="has-text-primary">Smile Delight Clinic</h2>
+              <p>
+                A website for dental clinic
+                <br>with a minimalist design
+              </p>
+            </div>
             <a
               href="https://smiledelightclinic.com"
               target="_blank"
-              class="showcase-button sm-delight w-button"
-            >เข้าชมเว็บไซต์</a>
+              class="button is-primary is-medium"
+            >Visit site</a>
           </div>
-        </div>
-        <h2 class="section-title centered">ตัวอย่างงานอื่น</h2>
-        <p class="centered is-size-5">*เป็นเพียงตัวอย่างไม่ได้ใช้จริง</p>
-        <div class="columns">
           <div class="column">
             <a class="demo-link" href="https://caffe-coffee.webflow.io">
               <img src="../assets/images/Caffe.jpg" alt>
@@ -228,14 +119,39 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <pricing>
+    </pricing>
+    <section class="section is-medium">
+      <div class="container has-text-centered-mobile">
+        <div class="columns">
+          <div class="column is-align-vertical">
+            <img class="responsive-img" src="../assets/images/responsive.svg" alt>
+          </div>
+          <div class="column is-half">
+            <h2 class="section-title">{{ $t('responsive.title') }}</h2>
+            <div class="content is-size-4-desktop is-size-5-tablet">
+              <p>{{ $t('responsive.desc') }}</p>
+            </div>
+            <div class="is-size-2 has-text-primary responsive-icon-wrapper">
+              <i class="fas fa-desktop"></i>
+              <i class="fas fa-tablet-alt"></i>
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <work-process></work-process>
   </div>
 </template>
 
 <script>
 import WorkProcess from "./_partials/Process.vue";
+import Pricing from "./_partials/Pricing.vue";
+import { VueTyper } from "vue-typer";
 export default {
-  components: { WorkProcess },
+  components: { WorkProcess, Pricing, VueTyper },
   data() {
     return {};
   },
@@ -246,15 +162,48 @@ export default {
 </script>
 
 <style lang="sass">
-  .intro-background
-    background-image: url('../assets/images/Background-Waves.svg')
-  .demo-link
-    img
-      box-shadow: 0 2px 5px 0 #b5b5b5
-      border-radius: 8px
-      transform: scale(0.9, 0.9)
-      transition: all .3s ease
-      &:hover
-        transform: scale(1, 1)
-        box-shadow: 0 8px 12px 3px #c2c2c2
+.demo-link
+  img
+    transition: all .3s ease
+  &:hover
+    background: #f2f2f2
+
+.skills-wrapper
+  margin-top: 2rem
+  display: grid
+  grid-template-columns: repeat(6, 80px)
+  grid-template-rows: 2fr
+  grid-column-gap: 1.75rem
+  grid-row-gap: 1.75rem
+  justify-items: start
+  align-items: center
+  .skill
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+  .skill-logo-wrapper
+    display: flex
+    width: 60px
+    height: 60px
+    margin: 0 auto
+  .skill-title
+    margin-top: 10px
+
+@media(max-width: 768px)
+  .skills-wrapper
+    justify-content: center
+    grid-template-columns: repeat(3, 80px)
+
+@media(max-width: 425px)
+  .skills-wrapper
+    justify-items: center
+    grid-column-gap: 1rem
+    grid-row-gap: 1rem
+
+.responsive-img
+  width: 80%
+  align-self: center
+.responsive-icon-wrapper > i:nth-child(2)
+  margin: 0 5rem
 </style>

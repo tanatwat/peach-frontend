@@ -1,61 +1,52 @@
 <template>
   <div class="page-content is-flex">
     <section id="container" class="section">
-      <div class="load-overlay" v-show="$root.loading">
-        <div class="roller-wrapper">
-          <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
       <transition name="fade" enter-active-class="fade" leave-active-class="fadeOut">
         <div class="step-overlay" v-show="overlay"></div>
       </transition>
 
       <div class="container w-container">
-        <p class="step-counter" v-show="step >= 1">หน้าที่&nbsp;{{ step + ' จาก ' + totalSteps}}</p>
+        <p
+          class="step-counter"
+          v-show="step >= 1"
+        >{{ $t('quote.steps') }}&nbsp;{{ step + $t('quote.of') + totalSteps}}</p>
 
-        <div class="pricing-container has-text-centered" v-show="step == 1">
-          <div class="content has-text-info">
-            โปรดทำแบบสอบถามต่อไปนี้
-            <br>เพื่อทำการประเมิณราคาเว็บไซต์ของลูกค้า
-            <br>หลังจากนั้นผมจะออกใบเสนอราคาให้
-            <br>ส่วนใหญ่แล้วจะใช้เวลาไม่เกิน 1 วัน
-            <br>และทำการส่งให้ลูกค้าทางอีเมล
-            <br>ถ้าผมมีคำถามเพิ่มเติม
-            <br class="is-hidden-desktop">ผมจะทำการติดต่อกลับไปครับ
-          </div>
-          <step-button wrapper="has-text-centered" :back="false" next-text="เริ่มทำแบบสอบถาม"></step-button>
+        <div class="quote-container has-text-centered" v-show="step == 1">
+          <div class="content has-text-white">{{ $t('quote.1.msg') }}</div>
+          <step-button wrapper="has-text-centered" :back="false" :next-text="$t('quote.start')"></step-button>
         </div>
 
-        <div class="pricing-container" v-show="step == 2">
+        <div class="quote-container" v-show="step == 2">
           <div class="form-group">
-            <label class="has-text-centered">คุณชื่ออะไร?</label>
-            <input class="input" type="text" placeholder="ชื่อของคุณ" v-model="form.name">
-            <label class="has-text-centered">ชื่อบริษัท (ถ้ามี)</label>
-            <input class="input" type="text" placeholder="ชื่อบริษัท" v-model="form.company">
-            <label class="has-text-centered">อีเมล</label>
-            <input class="input" type="email" placeholder="email@example.com" v-model="form.email">
-            <label class="has-text-centered">ช่องทางติดต่ออื่น</label>
+            <label class="has-text-centered">{{ $t('quote.2.name') }}</label>
             <input
               class="input"
               type="text"
-              placeholder="โทรศัพท์ ไลน์ หรืออื่นๆ"
+              :placeholder="$t('quote.2.placeholder1')"
+              v-model="form.name"
+            />
+            <label class="has-text-centered">{{ $t('quote.2.company_name') }}</label>
+            <input
+              class="input"
+              type="text"
+              :placeholder="$t('quote.2.placeholder2')"
+              v-model="form.company"
+            />
+            <label class="has-text-centered">{{ $t('quote.2.email') }}</label>
+            <input class="input" type="email" placeholder="email@example.com" v-model="form.email" />
+            <label class="has-text-centered">{{ $t('quote.2.contact') }}</label>
+            <input
+              class="input"
+              type="text"
+              :placeholder="$t('quote.2.placeholder3')"
               v-model="form.contact"
-            >
-            <label class="has-text-centered">ที่อยู่</label>
+            />
+            <label class="has-text-centered">{{ $t('quote.2.address') }}</label>
             <textarea
               cols="30"
               rows="5"
               v-model="form.address"
-              placeholder="ที่อยู่ที่สามารถติดต่อได้"
+              :placeholder="$t('quote.2.placeholder4')"
             ></textarea>
           </div>
 
@@ -63,7 +54,7 @@
         </div>
 
         <!-- <transition name="fade">
-          <div class="pricing-container has-text-centered" v-show="step == 2">
+          <div class="quote-container has-text-centered" v-show="step == 2">
             <div class="content is-large has-text-info">
               <p>สวัสดีครับคุณ {{ name }}</p>
               <label>ต้องการเว็บไซต์สำหรับใคร?</label>
@@ -80,63 +71,63 @@
           </div>
         </transition>-->
 
-        <div class="pricing-container has-text-centered" v-show="step == 3">
+        <div class="quote-container has-text-centered" v-show="step == 3">
           <div class="content is-large has-text-info">
-            <label>คุณต้องการเว็บไซต์สำหรับอะไร?</label>
+            <label>{{ $t('quote.3.website_for') }}</label>
             <input
               class="input"
               type="text"
-              placeholder="เช่น ธุรกิจของคุณ ขายสินค้า พอร์ตโฟลิโอ"
+              :placeholder="$t('quote.3.placeholder')"
               v-model="form.goal"
-            >
-            <span class="example">อาจระบุว่าคุณทำธุรกิจอะไร หรือ เป้าหมายของคุณก็ได้</span>
+            />
+            <span class="example">{{ $t('quote.3.example') }}</span>
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 4">
+        <div class="quote-container has-text-centered" v-show="step == 4">
           <div class="content is-large has-text-info">
-            <label>คุณมีโลโก้แบรนด์ของคุณหรือไม่?</label>
-            <div class="level is-mobile" style="justify-content: space-around">
-              <input class="is-hidden" type="radio" id="one" :value="true" v-model="form.hasLogo">
+            <label>{{ $t('quote.4.has_logo') }}</label>
+            <div class="level is-mobile">
+              <input class="is-hidden" type="radio" id="one" :value="true" v-model="form.hasLogo" />
               <label
                 class="radio-input"
                 :class="{'checked' : form.hasLogo}"
                 for="one"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="form.hasLogo"></i>&nbsp;มี
+                <i class="fas fa-check" v-show="form.hasLogo"></i>
+                &nbsp;{{ $t('quote.has') }}
               </label>
-              <input class="is-hidden" type="radio" id="two" :value="false" v-model="form.hasLogo">
+              <input class="is-hidden" type="radio" id="two" :value="false" v-model="form.hasLogo" />
               <label
                 class="radio-input"
                 :class="{'checked' : !form.hasLogo}"
                 for="two"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="!form.hasLogo"></i>&nbsp;ไม่มี
+                <i class="fas fa-check" v-show="!form.hasLogo"></i>
+                &nbsp;{{ $t('quote.not_has') }}
               </label>
             </div>
-            <label>คุณมีแบบดีไซน์อยู่แล้วหรือไม่?</label>
-            <span
-              class="example"
-              style="margin-bottom: .75rem"
-            >*ถ้าไม่มีคุณต้องเสียค่าออกแบบเพิ่มหรือคุณสามารถจ้างดีไซน์เนอร์อื่นทำให้ก็ได้</span>
-            <div class="level is-mobile" style="justify-content: space-around">
+            <label>{{ $t('quote.4.has_design') }}</label>
+            <span class="example" style="margin-bottom: .75rem">{{ $t('quote.4.example') }}</span>
+            <div class="level is-mobile">
               <input
                 class="is-hidden"
                 type="radio"
                 id="three"
                 :value="true"
                 v-model="form.hasDesign"
-              >
+              />
               <label
                 class="radio-input"
                 :class="{'checked' : form.hasDesign}"
                 for="three"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="form.hasDesign"></i>&nbsp;มี
+                <i class="fas fa-check" v-show="form.hasDesign"></i>
+                &nbsp;{{ $t('quote.has') }}
               </label>
               <input
                 class="is-hidden"
@@ -144,94 +135,107 @@
                 id="four"
                 :value="false"
                 v-model="form.hasDesign"
-              >
+              />
               <label
                 class="radio-input"
                 :class="{'checked' : !form.hasDesign}"
                 for="four"
                 style="width: 40%"
               >
-                <i class="fas fa-check" v-show="!form.hasDesign"></i>&nbsp;ไม่มี
+                <i class="fas fa-check" v-show="!form.hasDesign"></i>
+                &nbsp;{{ $t('quote.not_has') }}
               </label>
             </div>
-            <label>ถ้าคุณมีเว็บไซต์เดิมอยู่แล้วโปรดระบุ</label>
+            <label>{{ $t('quote.4.has_website')}}</label>
             <input
               class="input"
               type="text"
-              placeholder="ลิ้งค์ไปยังเว็บไซต์ของคุณ"
+              :placeholder="$t('quote.4.placeholder')"
               v-model="form.oldWebsite"
-            >
+            />
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 5">
-          <label>คุณต้องการโฮสต์กับโดเมนหรือไม่?</label>
-          <div class="level is-mobile" style="justify-content: space-around">
-            <input class="is-hidden" type="radio" id="Host" :value="true" v-model="form.hosting">
+        <div class="quote-container has-text-centered" v-show="step == 5">
+          <label>{{ $t('quote.5.hosting') }}</label>
+          <div class="level is-mobile">
+            <input class="is-hidden" type="radio" id="Host" :value="true" v-model="form.hosting" />
             <label
               class="radio-input"
               :class="{'checked' : form.hosting}"
               for="Host"
               style="width: 40%"
             >
-              <i class="fas fa-check" v-show="form.hosting"></i>&nbsp;ใช่
+              <i class="fas fa-check" v-show="form.hosting"></i>
+              &nbsp;{{ $t('quote.yes') }}
             </label>
-            <input class="is-hidden" type="radio" id="noHost" :value="false" v-model="form.hosting">
+            <input class="is-hidden" type="radio" id="noHost" :value="false" v-model="form.hosting" />
             <label
               class="radio-input"
               :class="{'checked' : !form.hosting}"
               for="noHost"
               style="width: 40%"
             >
-              <i class="fas fa-check" v-show="!form.hosting"></i>&nbsp;ไม่
+              <i class="fas fa-check" v-show="!form.hosting"></i>
+              &nbsp;{{ $t('quote.no') }}
             </label>
           </div>
           <div class="content is-large has-text-info">
-            <label>คุณต้องการให้เว็บไซต์ทำอะไรได้บ้าง?</label>
+            <label>{{ $t('quote.5.function') }}</label>
             <div v-for="(choice, index) in webFunctions">
-              <input type="checkbox" :id="index" :value="choice" v-model="form.functionalities">
+              <input type="checkbox" :id="index" :value="choice" v-model="form.functionalities" />
               <label class="checkbox" :for="index">{{ choice }}</label>
             </div>
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 6">
+        <div class="quote-container has-text-centered" v-show="step == 6">
           <div class="content is-large has-text-info">
-            <label>คุณต้องการเว็บไซต์กี่หน้า?</label>
-            <input class="input" type="text" placeholder="จำนวนหน้า" v-model="form.totalPage">
-            <label style="margin-top: 1rem">ต้องการหน้าเกี่ยวกับอะไรบ้าง?</label>
+            <label>{{ $t('quote.6.pages') }}</label>
+            <input
+              class="input"
+              type="text"
+              :placeholder="$t('quote.6.placeholder1')"
+              v-model="form.totalPage"
+            />
+            <label style="margin-top: 1rem">{{ $t('quote.6.page_content') }}</label>
             <textarea
               cols="15"
               rows="10"
               v-model="form.pageName"
-              placeholder="เช่น เกี่ยวกับเรา สินค้าและบริการ ติดต่อเรา"
+              :placeholder="$t('quote.6.placeholder2')"
               style="height: 200px"
             ></textarea>
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 7">
+        <div class="quote-container has-text-centered" v-show="step == 7">
           <div class="content is-large has-text-info">
-            <label>บอกความต้องการเพิ่มเติม</label>
-            <span class="example">*ถ้ามีตัวอย่างเว็บไซต์แบบที่คุณต้องการโปรดระบุลิ้งค์</span>
+            <label>{{ $t('quote.7.extra') }}</label>
+            <span class="example">{{ $t('quote.7.example') }}</span>
             <textarea
               cols="30"
               rows="10"
               v-model="form.description"
-              placeholder="เช่น รูปแบบดีไซน์ ฟังก์ชั่นการใช้งาน ตัวอย่างเว็บไซต์"
+              :placeholder="$t('quote.7.placeholder')"
             ></textarea>
           </div>
           <step-button></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="step == 8">
+        <div class="quote-container has-text-centered" v-show="step == 8">
           <div class="content is-large has-text-info">
-            <label>คุณมีงบประมาณเท่าไหร่?</label>
-            <input class="input" type="text" placeholder="จำนวนเงิน" v-model="form.budget">
-            <label style="margin-top: 1rem">ต้องการให้งานเสร็จภายในเวลาเท่าไหร่?</label>
+            <label>{{ $t('quote.8.budget') }}</label>
+            <input
+              class="input"
+              type="text"
+              :placeholder="$t('quote.8.placeholder')"
+              v-model="form.budget"
+            />
+            <label style="margin-top: 1rem">{{ $t('quote.8.deadline') }}</label>
             <select v-model="form.deadline">
               <option :value="date" v-for="date in deadlines">{{ date }}</option>
             </select>
@@ -239,7 +243,7 @@
           <step-button></step-button>
         </div>
 
-        <!-- <div class="pricing-container has-text-centered" v-show="step == 9">
+        <!-- <div class="quote-container has-text-centered" v-show="step == 9">
           <div class="content is-large has-text-info">
             <label>
               ถ้ามีไฟล์ที่ต้องการแนบ
@@ -250,28 +254,28 @@
           <step-button></step-button>
         </div>-->
 
-        <div class="pricing-container has-text-centered" v-show="step == 9">
+        <div class="quote-container has-text-centered" v-show="step == 9">
           <div class="content is-large has-text-info">
-            <label>คำถามเพิ่มเติม</label>
+            <label>{{ $t('quote.9.question') }}</label>
             <textarea
               cols="30"
               rows="10"
               v-model="form.questions"
-              placeholder="หากมีคำถามคุณสามารถเขียนได้ที่นี่"
+              :placeholder="$t('quote.9.placeholder')"
             ></textarea>
           </div>
           <step-button :next="false" :submit-button="true" v-on:click-submit="submit()"></step-button>
         </div>
 
-        <div class="pricing-container has-text-centered" v-show="formRecieved">
+        <div class="quote-container has-text-centered" v-show="formRecieved">
           <div class="content is-large has-text-info">
-            <label>ส่งแบบฟอร์มเรียบร้อยแล้ว</label>
-            <p>ผมจะทำการตอบกลับทางอีเมลพร้อมกับใบเสนอราคาครับ</p>
+            <label>{{ $t('qoute.finish') }}</label>
+            <p>{{ $t('qoute.finish_msg') }}</p>
             <router-link
               to="/"
               class="navigation-action-button w-button"
               v-show="$root.page == 'page'"
-            >กลับหน้าแรก</router-link>
+            >{{ $t('qoute.back_home') }}</router-link>
           </div>
         </div>
       </div>
@@ -309,22 +313,43 @@ export default {
         deadline: null,
         questions: null
       },
-      webFunctions: [
-        "ระบบร้านค้า (Ecommerce)",
-        "ระบบจัดการข้อมูล (CMS)",
-        "ระบบสมาชิก",
-        "ระบบค้นหา",
-        "สองภาษา (ไทย, อังกฤษ)"
-      ],
-      deadlines: [
-        "ภายใน 1 สัปดาห์",
-        "ภายใน 2 สัปดาห์",
-        "ภายใน 1 เดือน",
-        "ภายใน 2 เดือน",
-        "ภายใน 3 เดือน",
-        "ภายใน 6 เดือน"
-      ],
-      overlay: false
+      webFunctions: null,
+      deadlines: null,
+      overlay: false,
+      features: {
+        en: [
+          "Ecommerce",
+          "CMS",
+          "Site Search",
+          "Multiple Languages (Thai, English)"
+        ],
+        th: [
+          "ระบบร้านค้า (Ecommerce)",
+          "ระบบจัดการข้อมูล (CMS)",
+          "ระบบค้นหา",
+          "สองภาษา (ไทย, อังกฤษ)"
+        ]
+      },
+      timeline: {
+        en: [
+          "in a week",
+          "in 2 weeks",
+          "in a month",
+          "in 2 months",
+          "in 3 months",
+          "in 6 months",
+          "none"
+        ],
+        th: [
+          "ภายใน 1 สัปดาห์",
+          "ภายใน 2 สัปดาห์",
+          "ภายใน 1 เดือน",
+          "ภายใน 2 เดือน",
+          "ภายใน 3 เดือน",
+          "ภายใน 6 เดือน",
+          "ไม่จำกัด"
+        ]
+      }
     };
   },
   watch: {
@@ -354,7 +379,7 @@ export default {
       this.lineNotify();
       this.formRecieved = true;
       this.step = 0;
-      this.$root.loading = false;
+      setTimeout(() => (this.$root.loading = false), 1500);
     },
     lineNotify() {
       const lineToken = "DyLBVWkbvpoNj0xGKdGOqpyhtZJ4zC6v2tZVvh37lG6";
@@ -372,68 +397,75 @@ export default {
           params: msg
         }
       );
+    },
+    setLocale() {
+      this.webFunctions = this.features[this.$i18n.locale]
+      this.deadlines = this.timeline[this.$i18n.locale]
     }
   },
   created() {
     this.$root.page = "pricing";
     this.$parent.menu = false;
+    this.setLocale()
   }
 };
 </script>
 
 <style lang="sass">
-$btn-color: #6679d5
+$btn-color: #ff3860
 .step-overlay
   position: absolute
   width: 100%
   height: 100%
-  background: #191e3c
+  background: #000
+  z-index: 9999
 .step-counter
   padding: .75rem
-  background: $btn-color
-  color: #fff
+  color: #ff3860
   text-align: center
   width: fit-content
   margin: 0 auto 1rem auto
   border-radius: 8px
 #container
   flex-grow: 1
-  background: #343b65
+  background: #111
   width: 100%
   display: flex
   justify-content: space-around
   flex-direction: column
-.pricing-button
-   margin-top: 1.75rem
-   padding: 0.5rem 30px
-   border-radius: 8px
-   background:$btn-color
-   color: #fff
-   transition: all .3s ease
-   &:hover
-      background: #6a75ad
-.pricing-container
+.quote-container
   width: 600px
   max-width: 600px
   margin: 0 auto
-  border: 3px solid #ffe9e9
-  border-radius: 8px
-  padding: 1.75rem .75rem
-  background: #ffe9e9
+  background: transparent
   label, p , h1, h2 ,h3, h4 ,h5
     margin-bottom: 18px
-    color: $btn-color
+    color: #fff
   input, textarea, select
-    border-color: #fff
-    color: #555
+    outline: none !important
+    border: 1px solid transparent
+    border-radius: 5px
+    background: #222
+    color: #fff
+    padding: .75rem
+    &::placeholder
+      color: #777
     &:focus
-      border-color: $btn-color
+      border-color: #ff3860
   textarea
     font-size: 1.2rem !important
   .content
     line-height: 35px
     font-size: 1.4rem
-.pricing-wrapper
+.quote-button
+  color: #fff
+  background: #ff3860
+  border: none
+  padding: 10px 20px
+  border-radius: 5px
+  font-size: 1rem
+  min-width: 120px
+.quote-wrapper
    display: flex
    > *
       margin-right: .75rem
@@ -453,14 +485,17 @@ span.example
   display: block
   font-size: medium
   margin-top: .75rem
+  color: #c7d0ff
+  &::before
+    content: '* '
 @media (max-width: 768px)
-  .pricing-container
+  .quote-container
     max-width: 100%
     width: 100%
     input
       font-size: 1.2rem !important
 @media (max-width: 425px)
-  .pricing-container
+  .quote-container
     max-width: 100%
     width: 100%
     .content

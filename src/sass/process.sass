@@ -1,0 +1,54 @@
+.workflow-grid
+  margin: 3rem 0
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: 2fr
+  grid-column-gap: .5rem
+  grid-row-gap: 1rem
+  justify-items: center
+  align-items: center
+
+.workflow-wrapper
+  width: 100%
+  height: 100%
+  background: #fff 
+  border: 1px solid #eee
+
+@media(max-width: 768px)  
+   .workflow-grid
+      grid-template-columns: repeat(1, .5fr)
+      justify-items: center
+      justify-content: center
+
+@media(max-width: 425px)  
+   .workflow-grid
+      grid-template-columns: repeat(1, 1fr)
+
+.workflow-number
+  position: absolute
+  left: .5rem
+  top: .75rem
+  display: block
+  text-align: center
+  color: #ff3860
+  opacity: 0.2
+  line-height: 50px
+  border-radius: 100%
+  font-size: 4rem
+  font-weight: 800
+  font-family: sans-serif
+  margin-bottom: 15px
+.workflow-head
+  display: flex
+  align-items: center
+  position: relative
+  padding: 1.3rem 2rem
+  text-align: center
+.workflow-title
+  width: 100%
+  color: #555
+  font-size: 1.5rem
+  z-index: 1
+.workflow-text
+  padding: .75rem 1.75rem
+  text-align: center

@@ -4,6 +4,10 @@ import router from "./router";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 
+import VueI18n from 'vue-i18n'
+
+Vue.use(VueI18n)
+
 window.axios = require('axios')
 // Firebase
 import firebase from "firebase/app";
@@ -35,23 +39,43 @@ AOS.init({
   once: true
 });
 
-import axios from 'axios'
-Vue.prototype.$http = axios
-// Vue.prototype.$http = axios.create({
-//   baseURL: 'http://localhost:9000',
-//   headers: {
-//     Authorization: null
-//   }
-// });
+// Ready translated locale messages
+import {en} from './locale/en'
+import {th} from './locale/th'
+
+const currentLocale = localStorage.locale
+
+const locales = {
+  en,
+  th
+}
+// Create VueI18n instance with options
+const i18n = new VueI18n({
+  locale: currentLocale, // set locale
+  fallbackLocale: 'en',
+  messages: locales,
+})
+
 
 Vue.config.productionTip = false;
 
 new Vue({
+  i18n,
   data() {
     return {
       page: "home",
       loading: false
     };
+  },
+  methods: {
+    setLocale() {
+      if(localStorage.locale == null) {
+        localStorage.locale = navigator.language || navigator.userLanguage
+      }
+    }
+  },
+  created() {
+    this.setLocale()
   },
   router,
   render: h => h(App)
