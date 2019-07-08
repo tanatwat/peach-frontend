@@ -96,30 +96,3 @@ export default {
   }
 };
 </script>
-
-<style lang="sass">
-.pricing-table
-  > .column
-    color: #c2c2c2
-    border-bottom: 1px solid #555
-
-.pricing-header
-  border-bottom: 2px solid #555
-
-.pricing-title
-  background: #333 !important
-
-.pricing-help
-  cursor: pointer
-
-.pricing-description
-  padding-top: .5rem
-  padding-left: .5rem
-  color: #777
-
-@media (max-width: 768px)
-  .pricing-tiles
-    > .tile:not(:last-child)
-      border-right: 1px solid #555
-      border-bottom: none
-</style>

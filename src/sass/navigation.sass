@@ -1,0 +1,93 @@
+.logo-wrapper 
+   display: flex
+   align-self: center
+   width: auto
+   align-items: center
+   a
+      display: flex
+      width: fit-content
+   img
+      align-self: center
+      width: 50px
+      margin-right: 1rem
+
+
+.nav-bar
+   background: transparent
+   background: #000
+
+.nav-wrapper
+   height: 80px
+   display: flex
+   justify-content: space-between
+   margin: 0 auto
+
+.nav-links
+   display: flex
+   align-items: center
+.nav-link
+   color: #333
+   margin: 0 15px
+   font-size: 1.2rem
+   &:hover
+      color: #ff3860
+.nav-btn
+   margin-left: 1rem
+   padding: 12px 20px
+   background: #ff3860
+   color: #fff
+   border-radius: 50px
+   &:hover
+      color: #fff
+      background: darken(#ff3860, 5%)
+   &.round
+      padding: 12px
+      border-radius: 50%
+      width: 48px
+      text-align: center
+      
+.container,
+.nav-wrapper
+   padding: 0
+
+@media (max-width: 1200px)
+   .container,
+   .nav-wrapper
+      padding: 0 .75rem
+
+@media (max-width: 992px)
+   .container,
+   .nav-wrapper
+      padding: 0 1rem
+   .menu-wrapper
+      display: block
+
+@media (max-width: 768px)
+   .container,
+   .nav-wrapper
+      padding: 0 .75rem
+   .nav-wrapper
+      height: 70px
+   .logo-wrapper img
+      width: 40px
+   .nav-btn
+      padding: 10px 20px
+@media (max-width: 425px)
+   .container
+      padding: 0
+   .nav-wrapper
+      padding: .75rem
+      height: 60px
+   .logo-wrapper img
+      width: 35px
+   .nav-btn
+      padding: 0
+      background: transparent
+      color: #ff3860
+      &:hover
+         background: transparent
+         color: lighten(#ff3860, 5%)
+      &.round
+         background: #222
+         padding: 8px
+         width: 40px

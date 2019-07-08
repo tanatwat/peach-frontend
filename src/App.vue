@@ -20,7 +20,7 @@
         </div>
       </div>
     </nav>
-    <transition name="fade">
+
       <div class="load-overlay" v-show="$root.loading" style="animation-duration: 0.2s">
         <div class="roller-wrapper">
           <div class="lds-roller">
@@ -35,7 +35,6 @@
           </div>
         </div>
       </div>
-    </transition>
 
     <!-- ROUTER VIEW -->
     <transition
@@ -88,8 +87,8 @@
             <img src="./assets/images/peach-logo-full.svg" class="footer-logo" />
           </div>
           <div class="footer-right">
-            <button class="fas fa-envelope footer-link" style="padding-top:3px"></button>
-            <button class="fas fa-phone footer-link" style="padding-top:2px"></button>
+            <a :href="'mailto:' + contact.email" class="fas fa-envelope footer-link" style="padding-top:9px"></a>
+            <button class="fas fa-phone footer-link" style="padding-top:2px" @click="alertPhone()"></button>
             <button
               class="fab fa-line footer-link"
               href="https://line.me/R/ti/p/%40grz7564z"
@@ -142,6 +141,9 @@ export default {
     },
     afterEnter(element) {
       element.style.height = "auto";
+    },
+    alertPhone() {
+      alert('Tel. ' + this.$t('contact.phone'))
     },
     changeLocale() {
       this.$root.loading = true;

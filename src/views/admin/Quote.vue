@@ -75,19 +75,3 @@ export default {
   }
 };
 </script>
-
-<style lang="sass">
-   .qoute
-      border-bottom: 1px solid #ddd
-      padding: .75rem
-      cursor: pointer
-      &.active
-         border: 2px solid #5c71dd
-         border-radius: 8px
-      .qoute-title:hover
-         background: #eee
-         color: #777
-      .qoute-title.active
-            background: transparent
-            color: #5c71dd
-</style>

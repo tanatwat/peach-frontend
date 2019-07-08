@@ -3,7 +3,6 @@
     <div class="w-container container">
       <div class="is-flex">
         <router-link class="service-button w-button" to="/admin/qoute" style="margin-right:1rem">Qoute</router-link>
-        <router-link class="service-button w-button" to="/admin/qoute-create">Qoute Generator</router-link>
       </div>
    <div class="admin-box">
      ADMIN CONSOLE
@@ -37,11 +36,3 @@ export default {
   }
 };
 </script>
-
-<style lang="sass">
-   .admin-box
-      padding: .75rem
-      border: 1px solid #ddd
-      margin: 1rem 0
-      border-radius: 8px
-</style>

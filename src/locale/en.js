@@ -168,7 +168,7 @@ export const en = {
 	},
 	contact: {
 		button: 'CONTACT ME',
-		phone: '+66922730725',
+		phone: '+6692-273-0725',
 		available: {
 			title: 'Phone available on',
 			date: 'Mon. - Fri.',

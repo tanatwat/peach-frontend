@@ -167,8 +167,8 @@ export const th = {
 		back_home: 'กลับหน้าแรก'
 	},
 	contact: {
-		button: 'CONTACT ME',
-		phone: '+66922730725',
+		button: 'ช่องทางติดต่อ',
+		phone: '092-273-0725',
 		available: {
 			title: 'โทรศัพท์เฉพาะ',
 			date: 'วันจันทร์ - เสาร์',
