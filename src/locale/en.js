@@ -5,17 +5,20 @@ export const en = {
 		action: 'See some of my work'
 	},
 	intro: {
-		title1: 'Who am I?',
+		title1: 'Let me introduce myself',
 		1: 'My name is Tanatwat Wattanasakul.',
-		2: "I'm a self taught web developer",
-		3: 'and I love creating websites',
+		2: "I'm a self-taught web developer",
+		3: 'and I love creating websites.',
 		title2: 'What I do',
 		4: "I'm basically a full-stack web maker.",
 		5: 'I do all the process from design to a finished website.',
 		title3: 'Here is my skills'
 	},
 	work: {
-		title: 'Some of my work'
+		title1: 'Website',
+		subtitle1: 'Below is my work made in Webflow and exported the code for my clients',
+		title2: 'Design',
+		subtitle2: 'Below is my website design made in Adobe Xd or Webflow',
 	},
 	pricing: {
 		title: 'How much do I charge?',
@@ -23,7 +26,7 @@ export const en = {
 		info: '*Domain and hosting are not included.',
 		1: 'The answer is',
 		2: 'Depends on the project requirements.',
-		link: 'Full price chart here',
+		link: 'Full pricing details here',
 		from: 'From',
 		currency: 'THB',
 		get_quote: 'GET A QUOTE',
@@ -64,23 +67,23 @@ export const en = {
 			1: {
 				title: 'Estimate',
 				desc:
-					'Estimate the cost and requirements of the project from your information from the qoutation request form.'
+					'Estimate the cost and requirements of the project from your information from the quotation request form.'
 			},
 			2: {
 				title: 'Start working',
 				desc:
-					"Once the quote is accepted or signed you'll recieve the first invoice which is 50% of total cost.After the first payment I'll start working.",
+					"Once the quote is accepted or signed you'll receive the first invoice which is 50% of the total cost. After the first payment, I'll start working.",
 				info: 'You can hand over the assets (images, logo, etc) to me at this point.'
 			},
 			3: {
 				title: 'Feedback',
 				desc:
-					'I will send you a complete design to get a feedback.The feedback round consists of a maximum of 2 rounds.If the design pass I will make it into a website.'
+					'I will send you a complete design to get feedback. The feedback round consists of a maximum of 2 rounds. If the design pass, I will make it into a website.'
 			},
 			4: {
 				title: 'Finish project',
 				desc:
-					"You'll recieve a final invoice and after payment your website will go live.Minor changes and errors will be processed free of charge after the project is finished.",
+					"You'll receive a final invoice and after payment, your website will go live. Minor changes and errors will be processed free of charge after the project is finished.",
 				info: 'Some changes may result in additional costs.'
 			}
 		}

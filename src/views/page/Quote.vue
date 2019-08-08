@@ -269,13 +269,13 @@
 
         <div class="quote-container has-text-centered" v-show="formRecieved">
           <div class="content is-large has-text-info">
-            <label>{{ $t('qoute.finish') }}</label>
-            <p>{{ $t('qoute.finish_msg') }}</p>
+            <label>{{ $t('quote.finish') }}</label>
+            <p>{{ $t('quote.finish_msg') }}</p>
             <router-link
               to="/"
               class="navigation-action-button w-button"
               v-show="$root.page == 'page'"
-            >{{ $t('qoute.back_home') }}</router-link>
+            >{{ $t('quote.back_home') }}</router-link>
           </div>
         </div>
       </div>

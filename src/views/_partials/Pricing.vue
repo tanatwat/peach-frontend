@@ -1,6 +1,6 @@
 <template>
   <div id="services" class="section has-background-black has-text-white is-medium">
-    <div class="container has-text-centered-mobile">
+    <div class="container has-text-centered-mobile" data-aos="fade-right">
       <h2 class="section-title">{{ $t('pricing.title') }}</h2>
       <div class="content is-size-4-desktop is-size-5-tablet">
         <p>
@@ -50,7 +50,7 @@
             </div>
           </div>
         </div>
-
+        <p class="is-size-4-desktop is-size-5-tablet">{{ $t('pricing.info') }}</p>
          <h5 class="has-text-white">{{ $t('pricing.benefits.title') }}</h5>
          <p class="benefit-list">{{ $t('pricing.benefits.1') }}</p>
          <p class="benefit-list">{{ $t('pricing.benefits.2') }}</p>

@@ -24,69 +24,78 @@
       </div>
     </section>
     <section class="section is-medium has-background-white-ter" id="about">
-      <div class="container has-text-centered-mobile">
-        <h2 class="section-title">{{ $t('intro.title1') }}</h2>
-        <div class="content is-size-4-desktop is-size-5-tablet ">
-          <p>
-            {{ $t('intro.1') }}
-            <br>{{ $t('intro.2') }}
-            <br>{{ $t('intro.3') }}
-          </p>
-        </div>
-        <h2 class="section-title">{{ $t('intro.title2') }}</h2>
-        <div class="content is-size-4-desktop is-size-5-tablet ">
-          <p>
-            {{ $t('intro.4') }}
-            <br>{{ $t('intro.5') }}
-          </p>
-          <h5>{{ $t('intro.title3') }}</h5>
-        </div>
-        <div class="skills-wrapper">
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/webflow-mark-vector-blue-1.svg" alt class="skill-logo">
+      <div class="container" data-aos="fade-right">
+        <div class="columns is-mobile is-multiline">
+          <div class="column has-text-centered-mobile introduction is-full-touch">
+            <h2 class="section-title">{{ $t('intro.title1') }}</h2>
+            <div class="content is-size-4-desktop is-size-5-tablet ">
+              <p>
+                {{ $t('intro.1') }}
+                <br>{{ $t('intro.2') }}
+                <br>{{ $t('intro.3') }}
+              </p>
             </div>
-            <div class="skill-title">Webflow</div>
+            <h2 class="section-title">{{ $t('intro.title2') }}</h2>
+            <div class="content is-size-4-desktop is-size-5-tablet">
+              <p>
+                {{ $t('intro.4') }}
+                <br>{{ $t('intro.5') }}
+              </p>
+              <h5>{{ $t('intro.title3') }}</h5>
+            </div>
+            <div class="skills-wrapper">
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/webflow-mark-vector-blue-1.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">Webflow</div>
+              </div>
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/vue-js-1.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">Vue Js</div>
+              </div>
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/laravel.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">Laravel</div>
+              </div>
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/nodejs-icon.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">Node Js</div>
+              </div>
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/javascript.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">JavaScript</div>
+              </div>
+              <div class="skill">
+                <div class="skill-logo-wrapper">
+                  <img src="../assets/images/adobe-xd.svg" alt class="skill-logo">
+                </div>
+                <div class="skill-title">Adobe Xd</div>
+              </div>
+            </div>
           </div>
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/vue-js-1.svg" alt class="skill-logo">
-            </div>
-            <div class="skill-title">Vue Js</div>
-          </div>
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/laravel.svg" alt class="skill-logo">
-            </div>
-            <div class="skill-title">Laravel</div>
-          </div>
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/nodejs-icon.svg" alt class="skill-logo">
-            </div>
-            <div class="skill-title">Node Js</div>
-          </div>
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/javascript.svg" alt class="skill-logo">
-            </div>
-            <div class="skill-title">JavaScript</div>
-          </div>
-          <div class="skill">
-            <div class="skill-logo-wrapper">
-              <img src="../assets/images/adobe-xd.svg" alt class="skill-logo">
-            </div>
-            <div class="skill-title">Adobe Xd</div>
+          <div class="column has-text-centered profile-pic">
+            <img src="../assets/profile/profile-pic.jpg" alt="profile">
+            <i>This is me</i>
           </div>
         </div>
       </div>
     </section>
-  <work>
-  </work>
-    <pricing>
-    </pricing>
+
+    <work></work>
+
+    <pricing></pricing>
+
     <section class="section is-medium">
-      <div class="container has-text-centered-mobile">
+      <div class="container has-text-centered-mobile" data-aos="fade-right">
         <div class="columns">
           <div class="column is-align-vertical">
             <img class="responsive-img" src="../assets/images/responsive.svg" alt>

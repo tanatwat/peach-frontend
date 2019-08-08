@@ -64,7 +64,8 @@ new Vue({
   data() {
     return {
       page: "home",
-      loading: false
+      loading: false,
+      showModal: false
     };
   },
   methods: {

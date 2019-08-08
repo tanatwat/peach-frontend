@@ -28,6 +28,10 @@
   color: #ff3860
   z-index: 1
 
+.demo-mobile,
+.demo-desktop
+  transition: all .3s ease
+
 .demo-mobile
   position: absolute
 .demo-mobile
@@ -40,6 +44,13 @@
 .demo-desktop
   box-shadow: 0 3px 10px rgba(125, 125, 125, .5)
 
+@media (max-width: 768px)
+  .demo-wrapper
+    width: 70%
+    margin: 3rem auto
+@media (max-width: 425px)
+  .demo-wrapper
+    width: 100%
 /* ------------ SKILL SET ------------ */
 
 .skills-wrapper

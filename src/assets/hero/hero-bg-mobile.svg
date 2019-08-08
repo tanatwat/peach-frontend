@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="414" height="896" viewBox="0 0 414 896">
+  <defs>
+    <clipPath id="clip-iPhone_XR_XS_Max_1">
+      <rect width="414" height="896"/>
+    </clipPath>
+  </defs>
+  <g id="iPhone_XR_XS_Max_1" data-name="iPhone XR/XS Max – 1" clip-path="url(#clip-iPhone_XR_XS_Max_1)">
+    <rect width="414" height="896" fill="#fff"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" width="59" height="896" transform="translate(355)" fill="rgba(255,176,176,0.7)"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="59" height="896" transform="translate(296)" fill="rgba(255,176,176,0.6)"/>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="59" height="896" transform="translate(237)" fill="rgba(255,176,176,0.5)"/>
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="59" height="896" transform="translate(178)" fill="rgba(255,176,176,0.4)"/>
+    <rect id="Rectangle_6" data-name="Rectangle 6" width="59" height="896" transform="translate(119)" fill="rgba(255,176,176,0.3)"/>
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="59" height="896" transform="translate(60)" fill="rgba(255,176,176,0.2)"/>
+    <rect id="Rectangle_8" data-name="Rectangle 8" width="59" height="896" transform="translate(1)" fill="rgba(255,176,176,0.1)"/>
+  </g>
+</svg>
