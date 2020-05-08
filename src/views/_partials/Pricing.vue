@@ -13,7 +13,7 @@
             <h6 class="title">{{ $t('pricing.package.1.title') }}</h6>
             <div class="price">
               <span>{{ $t('pricing.from') }}</span>
-              <strong>6,900&nbsp;{{ $t('pricing.currency') }}</strong>
+              <strong>1,500&nbsp;{{ $t('pricing.currency') }}</strong>
             </div>
             <div class="description">
               <p>{{ $t('pricing.package.1.desc') }}</p>
@@ -26,7 +26,7 @@
             <h6 class="title">{{ $t('pricing.package.2.title') }}</h6>
             <div class="price">
               <span>{{ $t('pricing.from') }}</span>
-              <strong>12,000&nbsp;{{ $t('pricing.currency') }}</strong>
+              <strong>4,500&nbsp;{{ $t('pricing.currency') }}</strong>
             </div>
             <div class="description">
               <p>{{ $t('pricing.package.2.desc') }}</p>
@@ -40,7 +40,7 @@
             <h6 class="title">{{ $t('pricing.package.3.title') }}</h6>
             <div class="price">
               <span>{{ $t('pricing.from') }}</span>
-              <strong>25,000&nbsp;{{ $t('pricing.currency') }}</strong>
+              <strong>12,000&nbsp;{{ $t('pricing.currency') }}</strong>
             </div>
             <div class="description">
               <p>{{ $t('pricing.package.3.desc') }}</p>
